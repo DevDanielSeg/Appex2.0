@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/09/2021, 12:19:41 a. m.
+    Author     : Daniel Segura
+*/
+
+*{
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-primary: 'Roboto', sans-serif; 
+    --font-secondary: 'Public Sans', sans-serif;
+    
+    --color-primario: #f5af19;
+    --color-secundary: #f12711;
+    --color-base: #1d1d1f;
+
+}
+
+body{
+    font-family:  var(--font-secondary);
+    color:var(--color-base);
+    margin: 0 0.5em;
+}
+
+h1, h2{
+    font-family:  var(--font-primary); 
+    margin: 1em 0em;
+    text-align: center;
+    color: var(--color-primario)
+}
+
+h2, .form-group{
+    margin: 0.5em auto;
+}
+
+form{
+    margin: 2em;
+    background-color: white;
+    border-radius: 2em;
+    border: 0.5px solid var(--color-primario);
+    padding: 1em;
+}
+
+input[type="text"],input[type="number"], select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0.3em 0.5em;
+    width: 95%;
+    border:none;
+    border-bottom: 0.5px solid var(--color-primario);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1em;
+    padding: 0.1em;
+    fill:var(--color-primario);
+}
+input[type="text"]:focus,input[type="number"]:focus, select:focus{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: var(--font-primary);
+    font-size: 1em; 
+    outline: 0;
+    border-bottom: 2px solid var(--color-primario);
+
+}
+
+input[type="radio"]{
+    width: auto;
+    margin: 1em 0.5em 1em; 
+}
+
+.oculto{
+    display: none;
+}
+button{
+    font-family:  var(--font-secondary);
+    border-radius: 0.5em;
+    border: 0.5px solid var(--color-primario);
+    width: 5em;
+    height: 2.5em;
+    color: #fff;
+    background-color: var(--color-primario);
+}
+
+button:hover,
+button:focus{
+
+    color: var(--color-primario);
+    border: 0.5px solid var(--color-primario);
+    background-color: #fff;
+}
+
+@media (max-width: 600px) {
+    form{
+        margin: 0.5em;
+    }
+    input, select{
+        width: 100%;
+    }
+
+}
