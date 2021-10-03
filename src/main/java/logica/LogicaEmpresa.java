@@ -61,4 +61,16 @@ public class LogicaEmpresa {
             return false;
         }
     }
+     
+     public boolean consultarEmpresaNit(int nit_empresa){
+         
+         EmpresaDAO dao = new EmpresaDAO();
+         lista = dao.consultarEmpresaNit(nit_empresa);
+         if (lista.size()==1){
+             return true;
+         }
+         else {
+             return false ;
+         }
+     }
 }

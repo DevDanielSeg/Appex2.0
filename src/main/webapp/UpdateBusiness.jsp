@@ -4,6 +4,7 @@
     Author     : turme
 --%>
 
+<%@page import="logica.LogicaEmpresa"%>
 <%@page import="persistencia.ConexionBD"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -45,23 +46,14 @@
         <h1>Actualizacion de Datos Empresas AppEx</h1>
         <%
         ConexionBD con = new ConexionBD ();
-        int nit_consultar = Integer.parseInt(request.getParameter("nit"));
-        ResultSet  rs = lista.consultarEmpresaNit(nit_consultar);
-        
-        
-        
-        
-        int idEmpresa = e.getId();
-        String nombreEmpresa = e.getNombreEmpresa();
-        String nit = e.getNit();
-        String nombreRepLegal = e.getNombreRepLegal();
-        String noIdentidad = e.getNoIdentidad();
-        boolean tipoEmpresa = e.isTipoEmpresa();
-        int codigoCiiu = e.getCodigoCiiu();
-        boolean estadoEmpresa = e.isEstadoEmpresa();
-        String departamento = e.getDepartamento();
-        String ciudadMunicipio = e.getCiudadMunicipio();
-        %>
+        int nit_consultar = 2452;
+        //int nit_consultar = Integer.parseInt(request.getParameter("nit"));
+        LogicaEmpresa LogicaEmpresa = new LogicaEmpresa(); 
+        boolean actualizado = LogicaEmpresa.consultarEmpresaNit(nit_consultar);
+        if (actualizado){ out.println("esta mierda esta bien");}
+        else {out.println("la cagamso papa");}
+        }
+     %>
         <form action="FormularioEmpresas_ctr.jsp" method="post">
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre de la Empresa</label>
