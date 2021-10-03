@@ -44,8 +44,8 @@ public class EmpresaDAO {
     public ArrayList<Empresa> consultarEmpresas() {
         ArrayList<Empresa> lista = new ArrayList<>();
         ConexionBD con = new ConexionBD();
-        String sql = "SELECT id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad"+ 
-                     "FROM dbappex2.empresa";
+        String sql = "SELECT id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad "+ 
+                     "FROM dbappex2.empresa ";
         ResultSet rs = con.ejecutarQuery(sql);
         try {
             while (rs.next()) {
@@ -56,10 +56,10 @@ public class EmpresaDAO {
                 String noIdentidad = rs.getString("documento_representante");
                 boolean tipoEmpresa = Boolean.parseBoolean(rs.getString("tipo_empresa"));
                 int codigoCiiu = rs.getInt("cod_ciiu");
-                boolean estadoEmpresa = Boolean.parseBoolean(rs.getString("estado_empresa"));;
+                boolean estadoEmpresa = Boolean.parseBoolean(rs.getString("estado_empresa"));
                 String departamento = rs.getString("departamento");
                 String ciudadMunicipio = rs.getString("ciudad");
-                Empresa e = new Empresa(nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
+                Empresa e = new Empresa(id, nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
                 lista.add(e);
             }
         } catch (SQLException ex) {
