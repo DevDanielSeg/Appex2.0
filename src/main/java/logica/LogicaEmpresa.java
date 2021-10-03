@@ -1,9 +1,16 @@
 
 package logica;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
 import persistencia.EmpresaDAO;
 
 public class LogicaEmpresa {
+     private ArrayList<Empresa> lista;
+     
+      public ArrayList<Empresa> getLista() {
+        return lista;
+    }
        
     /**
      * Guarda la información de una capturada desde el formulario
@@ -33,5 +40,25 @@ public class LogicaEmpresa {
     return false;
     }
     
+    public boolean cargarTodasLasEmpresas() {
+        EmpresaDAO dao = new EmpresaDAO();
+        lista = dao.consultarEmpresas();
+        if (lista.size() > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     
+     public boolean cargarEmpresasPorFiltro(String filtro) {
+        EmpresaDAO dao = new EmpresaDAO();
+        lista = dao.consultarEmpresasPorFiltro(filtro);
+        if (lista.size() > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

@@ -156,5 +156,14 @@ public class Empresa {
         this.ciudadMunicipio = ciudadMunicipio;
     }
     
+    public String getEstadoEmpresa() {
+        if (tipoEmpresa== true) {
+            return "Activa";
+        }else{
+            return "Inactivo";
+        }
+    }
+    
+    
 }
     

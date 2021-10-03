@@ -41,7 +41,11 @@ h2, .form-group{
     margin: 0.5em auto;
 }
 
-form{
+.text-center{
+    text-align: center;
+}
+
+form, .cards{
     margin: 2em;
     background-color: white;
     border-radius: 2em;
@@ -99,6 +103,19 @@ button:focus{
     background-color: #fff;
 }
 
+/* Caja */
+
+.cajaPadre{
+    display: grid;
+    gap:0.5em;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+}
+
+.cajaHijo{
+    
+}
+
 @media (max-width: 600px) {
     form{
         margin: 0.5em;
@@ -106,5 +123,5 @@ button:focus{
     input, select{
         width: 100%;
     }
-
 }
+
