@@ -1150,6 +1150,8 @@
                 </select>
             </div>
             <button type="submit">Enviar</button>
+            <button type="submit">Editar </button>
+            
         </form>
 
     </body>
