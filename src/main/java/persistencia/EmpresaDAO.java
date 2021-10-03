@@ -3,6 +3,7 @@ package persistencia;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import logica.Empresa;
 public class EmpresaDAO {
     
@@ -76,6 +77,42 @@ public class EmpresaDAO {
         return false; 
     }
     
+        public ArrayList<Empresa> consultarEmpresaNit(int nit_consultar)  {
+        Empresa e = null;
+        ArrayList<Empresa> lista = new ArrayList<>();
+
+        ConexionBD con = new ConexionBD();
+        String sql = "SELECT  id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad" +
+                     "FROM dbappex2.empresa"+
+                     "WHERE nit_empresa = '" + nit_consultar + "' ";
+        
+        ResultSet rs = con.ejecutarQuery(sql);
+        try{
+        if (rs.next()){
+        int idEmpresa = e.getId();
+        String nombreEmpresa = e.getNombreEmpresa();
+        String nit = e.getNit();
+        String nombreRepLegal = e.getNombreRepLegal();
+        String noIdentidad = e.getNoIdentidad();
+        boolean tipoEmpresa = e.isTipoEmpresa();
+        int codigoCiiu = e.getCodigoCiiu();
+        boolean estadoEmpresa = e.isEstadoEmpresa();
+        String departamento = e.getDepartamento();
+        String ciudadMunicipio = e.getCiudadMunicipio();
+        
+        e = new Empresa (idEmpresa,nombreEmpresa,nit,nombreRepLegal,noIdentidad, tipoEmpresa,codigoCiiu,estadoEmpresa,departamento,ciudadMunicipio);
+        lista.add(e);
+        }}
+        
+        catch (SQLException ex){
+            con.desconectar();
+            return null;
+        }
+              
+
+        con.desconectar();
+        return lista;
+    }
     
     
 }

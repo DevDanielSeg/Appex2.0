@@ -1,9 +1,11 @@
 <%-- 
-    Document   : FormularioEmpresas
-    Created on : 10/09/2021, 10:48:08 p. m.
-    Author     : Daniel Segura
+    Document   : UpdateBusiness
+    Created on : 3/10/2021, 10:26:33 a. m.
+    Author     : turme
 --%>
 
+<%@page import="persistencia.ConexionBD"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,27 +39,45 @@
         
         <link rel="manifest" href="src/manifest.json">
 
-        <title>Formulario Empresas</title>
+        <title>Actualizacion Empresa</title>
     </head>
     <body>
-       
-        <h1>Ingreso de empresa al mundo AppEx</h1>
+        <h1>Actualizacion de Datos Empresas AppEx</h1>
+        <%
+        ConexionBD con = new ConexionBD ();
+        int nit_consultar = Integer.parseInt(request.getParameter("nit"));
+        ResultSet  rs = lista.consultarEmpresaNit(nit_consultar);
+        
+        
+        
+        
+        int idEmpresa = e.getId();
+        String nombreEmpresa = e.getNombreEmpresa();
+        String nit = e.getNit();
+        String nombreRepLegal = e.getNombreRepLegal();
+        String noIdentidad = e.getNoIdentidad();
+        boolean tipoEmpresa = e.isTipoEmpresa();
+        int codigoCiiu = e.getCodigoCiiu();
+        boolean estadoEmpresa = e.isEstadoEmpresa();
+        String departamento = e.getDepartamento();
+        String ciudadMunicipio = e.getCiudadMunicipio();
+        %>
         <form action="FormularioEmpresas_ctr.jsp" method="post">
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre de la Empresa</label>
-                <input id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
+                <input  value="" id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
             </div>
             <div class="form-group">
                 <label for="nit">NIT de empresa</label>
-                <input id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
+                <input  id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
             </div>
             <div class="form-group">
                 <label for="nombreRepLegal">Nombre del Representante Legal o propietario</label>
-                <input id="nombreRepLegal" name="nombreRepLegal" type="text" maxlength="50" placeholder="Nombre" required/>
+                <input  id="nombreRepLegal" name="nombreRepLegal" type="text" maxlength="50" placeholder="Nombre" required/>
             </div>
             <div class="form-group">
                 <label for="noIdentidad">Número del Documento de identidad</label>
-                <input id="noIdentidad" type="number" name="noIdentidad" maxlength="15" placeholder="Numero de Identidad" title="ingresa un valor, este campo solo acepta numeros" required/>
+                <input  id="noIdentidad" type="number" name="noIdentidad" maxlength="15" placeholder="Numero de Identidad" title="ingresa un valor, este campo solo acepta numeros" required/>
             </div>
             <div class="form-group">
                 <label>Tipo de Empresa</label><br>
@@ -1149,17 +1169,9 @@
                     <option value="Zona Bananera">Zona Bananera</option>
                 </select>
             </div>
-            <button type="submit">Enviar</button><br>
+            <button type="submit">Guardar</button>
             
+        </form>
 
-            
-        </form>
-        <form method="post" action="UpdateBusiness.jsp">
-            <div class="form-group">
-                <label for="nit">NIT de empresa a modificar</label>
-                <input id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
-            </div>
-            <button type =" submit">Consultar</button>  
-        </form>
     </body>
 </html>
