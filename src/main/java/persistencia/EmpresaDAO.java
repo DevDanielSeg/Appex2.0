@@ -73,14 +73,17 @@ public class EmpresaDAO {
      public ArrayList<Empresa> consultarEmpresasPorFiltro(String filtro) {
         ArrayList<Empresa> lista = new ArrayList<>();
         ConexionBD con = new ConexionBD();
-        String sql = "SELECT j.id, j.nombre, j.tipojuguete_id, t.tipo, j.fechacompra, j.estadojuguete_id, e.estado, j.disponibilidad " +
-                     "FROM juguetes j " +
-                     "JOIN tipos_juguetes t ON (j.tipojuguete_id = t.id) " +
-                     "JOIN estados_juguetes e ON (j.estadojuguete_id = e.id) " +
-                     "WHERE j.nombre LIKE '%" + filtro + "%' " +
-                     "OR t.tipo LIKE '%" + filtro + "%' " +
-                     "OR e.estado LIKE '%" + filtro + "%' " +
-                     "OR j.disponibilidad LIKE '%" + filtro + "%' ";
+        String sql = "SELECT e.id_empresa, e.nombre_empresa, e.nit_empresa, e.nombre_representante, e.documento_representante, e.tipo_empresa, e.cod_ciiu, e.estado_empresa, e.departamento, e.ciudad " +
+                    "FROM empresa e " +                        
+                    "WHERE e.nombre_empresa LIKE '%" + filtro + "%' " +
+                    "OR e.nit_empresa LIKE '%" + filtro + "%' " +
+                    "OR e.nombre_representante LIKE '%" + filtro + "%' " +
+                    "OR e.documento_representante LIKE '%" + filtro + "%' " +
+                    "OR e.tipo_empresa LIKE '%" + filtro + "%' " +
+                    "OR e.cod_ciiu LIKE '%" + filtro + "%' " +
+                    "OR e.estado_empresa LIKE '%" + filtro + "%' " +
+                    "OR e.departamento LIKE '%" + filtro + "%' " +
+                    "OR e.ciudad LIKE '%" + filtro + "%' ";        
         ResultSet rs = con.ejecutarQuery(sql);
         try {
             while (rs.next()) {

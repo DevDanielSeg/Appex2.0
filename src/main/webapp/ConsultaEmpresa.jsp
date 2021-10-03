@@ -80,16 +80,6 @@
                             <h3 class="text-center">Lo sentimos, no tenemos datos que concidan con la busqueda</h3>
                         </div>
                         <% } %>
-                    </tbody>
-                    
-                        <div class="cards">
-                            <img src="src" alt="alt" width="500px" height="500px"/>
-                            <div>
-                                <h3>Nombre de empresa</h3>
-                                <p>text</p>
-                                <p>departamento - Municipio</p>
-                            </div> 
-                        </div>
                     </div>
             </div>
     </body>
