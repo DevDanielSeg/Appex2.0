@@ -18,9 +18,9 @@
             String nit = request.getParameter("nit");
             String nombreRepLegal = request.getParameter("nombreRepLegal");
             String noIdentidad = request.getParameter("noIdentidad");
-            boolean tipoEmpresa =  Boolean.parseBoolean(request.getParameter("tipoEmpresa"));
+            int tipoEmpresa = Integer.parseInt(request.getParameter("tipoEmpresa"));
             int codigoCiiu = Integer.parseInt(request.getParameter("codigoCiiu"));
-            boolean estadoEmpresa =  Boolean.parseBoolean(request.getParameter("estadoEmpresa"));
+            int estadoEmpresa = Integer.parseInt(request.getParameter("estadoEmpresa"));
             String departamento = request.getParameter("departamento");
             String ciudadMunicipio = request.getParameter("ciudadMunicipio");
             Empresa e = null;

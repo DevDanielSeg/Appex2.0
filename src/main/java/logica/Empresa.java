@@ -11,9 +11,9 @@ public class Empresa {
     private String nit; //El NIT solo puede registrarse una vez en la base de datos
     private String nombreRepLegal;
     private String noIdentidad;
-    private boolean tipoEmpresa; // 1= Natural,  0=Jurídica 
+    private int tipoEmpresa; // 1= Natural,  0=Jurídica 
     private int codigoCiiu;
-    private boolean estadoEmpresa; //1=Activo, 0= Inactivo
+    private int estadoEmpresa; //1=Activo, 0= Inactivo
     private String departamento;
     private String ciudadMunicipio;
 
@@ -27,7 +27,7 @@ public class Empresa {
     /*
     Constructor que inicializa todos los atributos excepto el id 
     */
-    public Empresa(String nombreEmpresa, String nit, String nombreRepLegal, String noIdentidad, boolean tipoEmpresa, int codigoCiiu, boolean estadoEmpresa, String departamento, String ciudadMunicipio) {
+    public Empresa(String nombreEmpresa, String nit, String nombreRepLegal, String noIdentidad, int tipoEmpresa, int codigoCiiu, int estadoEmpresa, String departamento, String ciudadMunicipio) {
         this.nombreEmpresa = nombreEmpresa;
         this.nit = nit;
         this.nombreRepLegal = nombreRepLegal;
@@ -43,7 +43,7 @@ public class Empresa {
     /*
     Constructor que inicializa todos los atributos
     */
-    public Empresa(int id, String nombreEmpresa, String nit, String nombreRepLegal, String noIdentidad, boolean tipoEmpresa, int codigoCiiu, boolean estadoEmpresa, String departamento, String ciudadMunicipio) {
+    public Empresa(int id, String nombreEmpresa, String nit, String nombreRepLegal, String noIdentidad, int tipoEmpresa, int codigoCiiu, int estadoEmpresa, String departamento, String ciudadMunicipio) {
         this(nombreEmpresa,nit,nombreRepLegal,noIdentidad,tipoEmpresa,codigoCiiu,estadoEmpresa,departamento,ciudadMunicipio);
         this.id = id;
         
@@ -59,13 +59,13 @@ public class Empresa {
         String StringtipoEmpresa;
         String StringestadoEmpresa;
         
-        if (tipoEmpresa == true) {
+        if (tipoEmpresa == 1) {
             StringtipoEmpresa = "Natural";
         } else {
             StringtipoEmpresa = "Jurídica";
         }
         
-        if (estadoEmpresa == true) {
+        if (estadoEmpresa == 1) {
             StringestadoEmpresa = "Activa";
         } else {
             StringestadoEmpresa = "Inactiva";
@@ -116,11 +116,11 @@ public class Empresa {
         this.noIdentidad = noIdentidad;
     }
 
-    public boolean isTipoEmpresa() {
+    public int isTipoEmpresa() {
         return tipoEmpresa;
     }
 
-    public void setTipoEmpresa(boolean tipoEmpresa) {
+    public void setTipoEmpresa(int tipoEmpresa) {
         this.tipoEmpresa = tipoEmpresa;
     }
 
@@ -132,11 +132,11 @@ public class Empresa {
         this.codigoCiiu = codigoCiiu;
     }
 
-    public boolean isEstadoEmpresa() {
+    public int isEstadoEmpresa() {
         return estadoEmpresa;
     }
 
-    public void setEstadoEmpresa(boolean estadoEmpresa) {
+    public void setEstadoEmpresa(int estadoEmpresa) {
         this.estadoEmpresa = estadoEmpresa;
     }
 
@@ -157,7 +157,7 @@ public class Empresa {
     }
     
     public String getEstadoEmpresa() {
-        if (tipoEmpresa== true) {
+        if (tipoEmpresa== 1) {
             return "Activa";
         }else{
             return "Inactivo";

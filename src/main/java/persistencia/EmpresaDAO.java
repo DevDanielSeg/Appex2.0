@@ -20,9 +20,9 @@ public class EmpresaDAO {
         String nit = e.getNit();
         String nombreRepLegal = e.getNombreRepLegal();
         String noIdentidad = e.getNoIdentidad();
-        boolean tipoEmpresa = e.isTipoEmpresa();
+        int tipoEmpresa = e.isTipoEmpresa();
         int codigoCiiu = e.getCodigoCiiu();
-        boolean estadoEmpresa = e.isEstadoEmpresa();
+        int estadoEmpresa = e.isEstadoEmpresa();
         String departamento = e.getDepartamento();
         String ciudadMunicipio = e.getCiudadMunicipio();
              
@@ -56,9 +56,9 @@ public class EmpresaDAO {
                 String nit = rs.getString("nit_empresa");
                 String nombreRepLegal = rs.getString("nombre_representante");
                 String noIdentidad = rs.getString("documento_representante");
-                boolean tipoEmpresa = Boolean.parseBoolean(rs.getString("tipo_empresa"));
-                int codigoCiiu = rs.getInt("cod_ciiu");
-                boolean estadoEmpresa = Boolean.parseBoolean(rs.getString("estado_empresa"));
+                int tipoEmpresa = Integer.parseInt((rs.getString("tipo_empresa")));
+                int codigoCiiu = Integer.parseInt(rs.getString("cod_ciiu"));
+                int estadoEmpresa = Integer.parseInt((rs.getString("estado_empresa")));
                 String departamento = rs.getString("departamento");
                 String ciudadMunicipio = rs.getString("ciudad");
                 Empresa e = new Empresa(id, nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
@@ -94,9 +94,9 @@ public class EmpresaDAO {
                 String nit = rs.getString("nit_empresa");
                 String nombreRepLegal = rs.getString("nombre_representante");
                 String noIdentidad = rs.getString("documento_representante");
-                boolean tipoEmpresa = Boolean.parseBoolean(rs.getString("tipo_empresa"));
-                int codigoCiiu = rs.getInt("cod_ciiu");
-                boolean estadoEmpresa = Boolean.parseBoolean(rs.getString("estado_empresa"));;
+                int tipoEmpresa = Integer.parseInt((rs.getString("tipo_empresa")));
+                int codigoCiiu = Integer.parseInt(rs.getString("cod_ciiu"));
+                int estadoEmpresa = Integer.parseInt((rs.getString("estado_empresa")));
                 String departamento = rs.getString("departamento");
                 String ciudadMunicipio = rs.getString("ciudad");
                 Empresa e = new Empresa(nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
@@ -124,9 +124,9 @@ public class EmpresaDAO {
         String nit = e.getNit();
         String nombreRepLegal = e.getNombreRepLegal();
         String noIdentidad = e.getNoIdentidad();
-        boolean tipoEmpresa = e.isTipoEmpresa();
+        int tipoEmpresa = e.isTipoEmpresa();
         int codigoCiiu = e.getCodigoCiiu();
-        boolean estadoEmpresa = e.isEstadoEmpresa();
+        int estadoEmpresa = e.isEstadoEmpresa();
         String departamento = e.getDepartamento();
         String ciudadMunicipio = e.getCiudadMunicipio();
         
@@ -171,9 +171,9 @@ public class EmpresaDAO {
             String nombreEmpresa = rs.getString("nombre_empresa");
             String nombreRepLegal = rs.getString("nombre_representante");
             String noIdentidad = rs.getString("documento_representante");
-            boolean tipoEmpresa = rs.getBoolean("tipo_empresa");
-            int codigoCiiu = rs.getInt("cod_ciiu");
-            boolean estadoEmpresa = rs.getBoolean("estado_empresa");
+            int tipoEmpresa = Integer.parseInt((rs.getString("tipo_empresa")));
+            int codigoCiiu = Integer.parseInt(rs.getString("cod_ciiu"));
+            int estadoEmpresa = Integer.parseInt((rs.getString("estado_empresa")));
             String departamento = rs.getString("departamento");
             String ciudadMunicipio = rs.getString("ciudad");
             
