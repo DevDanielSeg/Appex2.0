@@ -4,6 +4,8 @@
     Author     : turme
 --%>
 
+<%@page import="logica.Empresa"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="logica.LogicaEmpresa"%>
 <%@page import="persistencia.ConexionBD"%>
 <%@page import="java.sql.ResultSet"%>
@@ -33,11 +35,11 @@
         <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="src/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
-        
+
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
+
         <link rel="manifest" href="src/manifest.json">
 
         <title>Actualizacion Empresa</title>
@@ -45,49 +47,69 @@
     <body>
         <h1>Actualizacion de Datos Empresas AppEx</h1>
         <%
-        ConexionBD con = new ConexionBD ();
+            String nit_consultar = request.getParameter(("nit"));
+            //int nit_consultar = Integer.parseInt(request.getParameter("nit"));
+            LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
+            boolean actualizado = LogicaEmpresa.consultarEmpresaPorNit(nit_consultar);
+            if (actualizado == true) { %>esta mierda esta bien<%} else {%>la cagamos papa<%}
+                for (Empresa e : LogicaEmpresa.getLista()) {
+                    String nombreEmpresa = e.getNombreEmpresa();
+                    String nit = e.getNit();
+                    String nombreRepLegal = e.getNombreRepLegal();
+                    String noIdentidad = e.getNoIdentidad();
+                    int tipoEmpresa = e.isTipoEmpresa();
+                    int codigoCiiu = e.getCodigoCiiu();
+                    int estadoEmpresa = e.isEstadoEmpresa();
+                    String departamento = e.getDepartamento();
+                    String ciudadMunicipio = e.getCiudadMunicipio();
+                
 
-        //int nit_consultar = Integer.parseInt(request.getParameter("nit"));
-        LogicaEmpresa LogicaEmpresa = new LogicaEmpresa(); 
-        boolean actualizado = LogicaEmpresa.consultarEmpresaNit();
-        if (actualizado){ out.println("esta mierda esta bien");}
-        else {out.println("la cagamso papa");}
-        
-     %>
+        %>
         <form action="FormularioEmpresas_ctr.jsp" method="post">
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre de la Empresa</label>
-                <input  value="" id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
+                <input value="<%=nombreEmpresa%>" id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
             </div>
             <div class="form-group">
                 <label for="nit">NIT de empresa</label>
-                <input  id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
+                <input value="<%=nit%>" id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
             </div>
             <div class="form-group">
                 <label for="nombreRepLegal">Nombre del Representante Legal o propietario</label>
-                <input  id="nombreRepLegal" name="nombreRepLegal" type="text" maxlength="50" placeholder="Nombre" required/>
+                <input  value="<%= nombreRepLegal%>" id="nombreRepLegal" name="nombreRepLegal" type="text" maxlength="50" placeholder="Nombre" required/>
             </div>
             <div class="form-group">
                 <label for="noIdentidad">Número del Documento de identidad</label>
-                <input  id="noIdentidad" type="number" name="noIdentidad" maxlength="15" placeholder="Numero de Identidad" title="ingresa un valor, este campo solo acepta numeros" required/>
+                <input value="<%=noIdentidad %>" id="noIdentidad" type="number" name="noIdentidad" maxlength="15" placeholder="Numero de Identidad" title="ingresa un valor, este campo solo acepta numeros" required/>
             </div>
             <div class="form-group">
                 <label>Tipo de Empresa</label><br>
+               <% if(tipoEmpresa==1){%>
                 <input type="radio" value="true" name="tipoEmpresa" id="estadoEmpresaNatural" checked required><label for="estadoEmpresaNatural">Natural</label>
                 <input type="radio" value="false" name="tipoEmpresa" id="estadoEmpresaJuridica"><label for="estadoEmpresaJuridica">Jurídica</label>
+                <%} else{ %>
+                <input type="radio" value="true" name="tipoEmpresa" id="estadoEmpresaNatural" ><label for="estadoEmpresaNatural">Natural</label>
+                <input type="radio" value="false" name="tipoEmpresa" id="estadoEmpresaJuridica" checked required><label for="estadoEmpresaJuridica">Jurídica</label>
+                        <%}%>
+               
             </div>
             <div class="form-group">
                 <label for="codigoCiiu">Actividad económica de la Empresa (código CIIU)</label>
-                <input type="number" id="codigoCiiu" name="codigoCiiu" maxlength="6" placeholder="Clasificación Industrial Internacional Uniforme" />
+                <input value="<%=codigoCiiu %>" type="number" id="codigoCiiu" name="codigoCiiu" maxlength="6" placeholder="Clasificación Industrial Internacional Uniforme" />
             </div>
             <div class="form-group">
                 <label>Estado de la Empresa</label><br>
+                <% if(estadoEmpresa==1){%>
                 <input type="radio" value="true" name="estadoEmpresa" id="estadoEmpresaActivo" checked required><label for="estadoEmpresaActivo">Activo</label>
                 <input type="radio" value="false" name="estadoEmpresa" id="estadoEmpresaInactivo"><label for="estadoEmpresaInactivo">Inactivo</label>
+                 <%} else{ %>
+                 <input type="radio" value="true" name="estadoEmpresa" id="estadoEmpresaActivo"  required><label for="estadoEmpresaActivo">Activo</label>
+                <input type="radio" value="false" name="estadoEmpresa" id="estadoEmpresaInactivo" checked ><label for="estadoEmpresaInactivo">Inactivo</label>
+                <%}%>
             </div>
             <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <select class="form-control" id="departamento" name="departamento" title="Por favor Selecciona una opción" required>
+                <select value="<%=departamento %>" class="form-control" id="departamento" name="departamento" title="Por favor Selecciona una opción" required>
                     <option value = "">Seleccione una opción</option>
                     <option value = "Amazonas">Amazonas</option>
                     <option value = "Antioquia">Antioquia</option>
@@ -125,7 +147,7 @@
             </div>
             <div class="form-group">
                 <label for="ciudadMunicipio">Ciudad ó Municipio</label>
-                <select class="form-control" id="ciudadMunicipio" name="ciudadMunicipio" title="Por favor Selecciona una opción" required>
+                <select value="<%=ciudadMunicipio %>" class="form-control" id="ciudadMunicipio" name="ciudadMunicipio" title="Por favor Selecciona una opción" required>
                     <option value="">Seleccione una opción</option>
                     <option value="Abrego" class="oculto">Abrego</option>
                     <option value="Abriaquí">Abriaquí</option>
@@ -1162,8 +1184,8 @@
                 </select>
             </div>
             <button type="submit">Guardar</button>
-            
-        </form>
+
+        </form><%}%>
 
     </body>
 </html>

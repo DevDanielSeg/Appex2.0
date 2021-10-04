@@ -147,23 +147,21 @@ public class EmpresaDAO {
     }
     
     /**
-     *
+     * 
      * @param nit_consultar
      * @return
      */
-    public ArrayList<Empresa> consultarEmpresaNit(){
-        int nit_consultar = 10;
+    public ArrayList<Empresa> consultarEmpresaNit(String nit_consultar){
+        
         ArrayList<Empresa> lista = new ArrayList<>();
-
         ConexionBD con = new ConexionBD();
-        String sql = "SELECT  id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad" +
-                     "FROM dbappex2.empresa "+
-                     "WHERE nit_empresa = '" + nit_consultar + "' ";
+        String sql = "SELECT  id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad " +
+                     "FROM empresa "+
+                     "WHERE nit_empresa = '" + nit_consultar+ "' ";
         
         ResultSet rs = con.ejecutarQuery(sql);
-        boolean bandera=false;
         try {
-        if (rs.next()){
+        while (rs.next()){
             
             Empresa e = new Empresa();
             int id = rs.getInt ("id_empresa");
@@ -179,11 +177,9 @@ public class EmpresaDAO {
             
             e = new Empresa (id, nombreEmpresa,nit,nombreRepLegal,noIdentidad, tipoEmpresa,codigoCiiu,estadoEmpresa,departamento,ciudadMunicipio);
             lista.add(e);
-            if (e!=null){bandera=true;}
         }}
         catch(Exception ex){
             con.desconectar();
-            
             return null;
         }
               
