@@ -46,13 +46,13 @@
         <h1>Actualizacion de Datos Empresas AppEx</h1>
         <%
         ConexionBD con = new ConexionBD ();
-        int nit_consultar = 2452;
+
         //int nit_consultar = Integer.parseInt(request.getParameter("nit"));
         LogicaEmpresa LogicaEmpresa = new LogicaEmpresa(); 
-        boolean actualizado = LogicaEmpresa.consultarEmpresaNit(nit_consultar);
+        boolean actualizado = LogicaEmpresa.consultarEmpresaNit();
         if (actualizado){ out.println("esta mierda esta bien");}
         else {out.println("la cagamso papa");}
-        }
+        
      %>
         <form action="FormularioEmpresas_ctr.jsp" method="post">
             <div class="form-group">

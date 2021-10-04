@@ -1,9 +1,11 @@
 
 package persistencia;
 
+import com.sun.tools.javac.util.Assert;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import static javax.swing.UIManager.getString;
 import logica.Empresa;
 
 
@@ -141,42 +143,49 @@ public class EmpresaDAO {
         return false; 
     }
     
-        public ArrayList<Empresa> consultarEmpresaNit(int nit_consultar)  {
-        Empresa e = null;
+    /**
+     *
+     * @param nit_consultar
+     * @return
+     */
+    public ArrayList<Empresa> consultarEmpresaNit(){
+        int nit_consultar = 10;
         ArrayList<Empresa> lista = new ArrayList<>();
 
         ConexionBD con = new ConexionBD();
         String sql = "SELECT  id_empresa, nombre_empresa, nit_empresa, nombre_representante, documento_representante, tipo_empresa, cod_ciiu, estado_empresa, departamento, ciudad" +
-                     "FROM dbappex2.empresa"+
+                     "FROM dbappex2.empresa "+
                      "WHERE nit_empresa = '" + nit_consultar + "' ";
         
         ResultSet rs = con.ejecutarQuery(sql);
-        try{
+        boolean bandera=false;
+        try {
         if (rs.next()){
-        int idEmpresa = e.getId();
-        String nombreEmpresa = e.getNombreEmpresa();
-        String nit = e.getNit();
-        String nombreRepLegal = e.getNombreRepLegal();
-        String noIdentidad = e.getNoIdentidad();
-        boolean tipoEmpresa = e.isTipoEmpresa();
-        int codigoCiiu = e.getCodigoCiiu();
-        boolean estadoEmpresa = e.isEstadoEmpresa();
-        String departamento = e.getDepartamento();
-        String ciudadMunicipio = e.getCiudadMunicipio();
-        
-        e = new Empresa (idEmpresa,nombreEmpresa,nit,nombreRepLegal,noIdentidad, tipoEmpresa,codigoCiiu,estadoEmpresa,departamento,ciudadMunicipio);
-        lista.add(e);
+            
+            Empresa e = new Empresa();
+            int id = rs.getInt ("id_empresa");
+            String nit = String.valueOf(nit_consultar);
+            String nombreEmpresa = rs.getString("nombre_empresa");
+            String nombreRepLegal = rs.getString("nombre_representante");
+            String noIdentidad = rs.getString("documento_representante");
+            boolean tipoEmpresa = rs.getBoolean("tipo_empresa");
+            int codigoCiiu = rs.getInt("cod_ciiu");
+            boolean estadoEmpresa = rs.getBoolean("estado_empresa");
+            String departamento = rs.getString("departamento");
+            String ciudadMunicipio = rs.getString("ciudad");
+            
+            e = new Empresa (id, nombreEmpresa,nit,nombreRepLegal,noIdentidad, tipoEmpresa,codigoCiiu,estadoEmpresa,departamento,ciudadMunicipio);
+            lista.add(e);
+            if (e!=null){bandera=true;}
         }}
-        
-        catch (SQLException ex){
+        catch(Exception ex){
             con.desconectar();
+            
             return null;
         }
               
 
         con.desconectar();
         return lista;
-    }
+    }}
     
-    
-}

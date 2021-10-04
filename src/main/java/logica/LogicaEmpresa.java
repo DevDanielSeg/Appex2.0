@@ -1,6 +1,7 @@
 
 package logica;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 import persistencia.EmpresaDAO;
@@ -62,15 +63,14 @@ public class LogicaEmpresa {
         }
     }
      
-     public boolean consultarEmpresaNit(int nit_empresa){
-         
+     public boolean consultarEmpresaNit(){ 
          EmpresaDAO dao = new EmpresaDAO();
-         lista = dao.consultarEmpresaNit(nit_empresa);
-         if (lista.size()==1){
+         lista = dao.consultarEmpresaNit();
+         if (lista.size() > 0){
              return true;
          }
          else {
              return false ;
          }
-     }
-}
+     }}
+
