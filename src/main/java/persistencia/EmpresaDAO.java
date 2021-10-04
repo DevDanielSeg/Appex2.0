@@ -42,6 +42,11 @@ public class EmpresaDAO {
         con.desconectar();
         return id;
     }
+     /**
+     * Envía la sentencia SQL para consutar empresas en todas nuestras bases datos
+     * @param e un objeto de tipo Empresa
+     * retorna una lista, donde se encuentran las empresas registradas 
+     */
     
     public ArrayList<Empresa> consultarEmpresas() {
         ArrayList<Empresa> lista = new ArrayList<>();
@@ -71,6 +76,13 @@ public class EmpresaDAO {
         con.desconectar();
         return lista;
     }
+    
+     /**
+     * Envía la sentencia SQL para consutar empresas que considan con el filtro en todas nuestras bases datos
+     * Resive parametro filtro
+     * @param e un objeto de tipo Empresa
+     * retorna una lista, donde se encuentran las empresas registradas con el filtro ejecutados
+     */
     
      public ArrayList<Empresa> consultarEmpresasPorFiltro(String filtro) {
         ArrayList<Empresa> lista = new ArrayList<>();
@@ -116,6 +128,7 @@ public class EmpresaDAO {
      * retorna un booleano, donde TRUE es que modifico SOLO UNA EMPRESA y FALSE es que no afecto ninguna fila de la 
      * base de datos 
      */
+     
     public boolean actualizarEmpresa(Empresa e) {
         ConexionBD con = new ConexionBD();
         //recogemos los datos de la empresa y los guardamos 
@@ -182,8 +195,6 @@ public class EmpresaDAO {
             con.desconectar();
             return null;
         }
-              
-
         con.desconectar();
         return lista;
     }}
