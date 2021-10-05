@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard
-    Created on : 4/10/2021, 1:01:22 p. m.
+    Document   : MiEmpresa
+    Created on : 5/10/2021, 4:40:33 p. m.
     Author     : turme
 --%>
 
@@ -34,35 +34,31 @@
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
-        <link rel="stylesheet" href="estilos/estilos2.css">
-        
-        <title>Appex</title>
-    </head>
-    <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("empresaPredeterminada"); %>
-        <h1 class="subseccion">Appex</h1>
-        <h3>Barra de navegacion</h3>
 
-        <div class="display">
+        <link rel="manifest" href="src/manifest.json">
+
+        <title>Mi empresa</title>
+    </head
+    <body>
+        <h1>Mi empresa</h1>
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
+
+
+        <div class="text-center">
+            <p>nombre: </p>
+            <p>nit: <%=nitEmpresaPredeterminada %> </p>
+            <p>nombre representante legal: </p>
+            <p>numero de documento: </p>
+            <p>tipo de empresa: </p>
+            <p>codigo ciiu: </p>
+            <p>estado de la empresa: </p>
+            <p>departamento: </p>
+            <p>ciudad/municipio: </p>
             <div>
-                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
-            </div>
-            <div class="">
-                <a href="dashboard.jsp" ><button>inicio</button></a>
-                <a href="FormularioEmpresas.jsp" > <button>Registro</button></a>
-                <a href="MiEmpresa.jsp  ?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>"><button>mis datos</button></a>
-                <a href="FormularioComercial.jsp"><button>descripcion</button></a>
-                <a href="ConsultaEmpresa.jsp"><button>catalogo</button></a>
-                <a href=""><button>Productos</button></a>
-                <a href="login.jsp" > <button>salir</button></a>
-            </div>
-            <div>
+                <a href=UpdateBusiness.jsp ><button>editar</button> </a>
+                <a href="dashboard.jsp" ><button>inicio</button> </a>
+
             </div>
         </div>
-
-        <div>cuadro de la izquierda</div>
-        <div>funciones</div>
-
     </body>
 </html>

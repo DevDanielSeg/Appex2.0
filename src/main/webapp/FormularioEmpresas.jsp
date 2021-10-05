@@ -1,5 +1,4 @@
-<%-- 
-    Document   : FormularioEmpresas
+<%--    Document   : FormularioEmpresas
     Created on : 10/09/2021, 10:48:08 p. m.
     Author     : Daniel Segura
 --%>
@@ -1152,12 +1151,6 @@
             <button type="submit">Enviar</button><br>
             
         </form>
-        <form method="post" action="UpdateBusiness.jsp">
-            <div class="form-group">
-                <label for="nit">NIT de empresa a modificar</label>
-                <input id="nit" type="text" for="nit" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
-            </div>
-            <button type =" submit">Consultar</button>  
-        </form>
+
     </body>
 </html>

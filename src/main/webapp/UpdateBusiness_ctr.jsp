@@ -30,7 +30,7 @@
             if (datos == true) { %> se actualizaron exitosamente los datos<%}
             else {%> no se pudieron actualizar los datos<%}
         %>       
-        <a href="FormularioEmpresas.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver al inicio</button></a>
+        <a href="dashboard.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver al inicio</button></a>
 
     </body>
 </html>

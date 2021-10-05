@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard
-    Created on : 4/10/2021, 1:01:22 p. m.
+    Document   : quienSoy
+    Created on : 5/10/2021, 4:47:05 p. m.
     Author     : turme
 --%>
 
@@ -34,35 +34,27 @@
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
-        <link rel="stylesheet" href="estilos/estilos2.css">
-        
-        <title>Appex</title>
-    </head>
+
+        <link rel="manifest" href="src/manifest.json">
+
+        <title>Identificacion</title>
+    </head
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("empresaPredeterminada"); %>
-        <h1 class="subseccion">Appex</h1>
-        <h3>Barra de navegacion</h3>
-
-        <div class="display">
+        <h1>Login</h1>
+        <form action="dashboard.jsp" method="POST">
             <div>
-                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
-            </div>
-            <div class="">
-                <a href="dashboard.jsp" ><button>inicio</button></a>
-                <a href="FormularioEmpresas.jsp" > <button>Registro</button></a>
-                <a href="MiEmpresa.jsp  ?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>"><button>mis datos</button></a>
-                <a href="FormularioComercial.jsp"><button>descripcion</button></a>
-                <a href="ConsultaEmpresa.jsp"><button>catalogo</button></a>
-                <a href=""><button>Productos</button></a>
-                <a href="login.jsp" > <button>salir</button></a>
+            <label>usuario: </label>
+            <input type="text" placeholder="usuario">
             </div>
             <div>
+            <label>contraseña:  </label>
+            <input type="text" placeholder="usuario">    
             </div>
-        </div>
-
-        <div>cuadro de la izquierda</div>
-        <div>funciones</div>
-
+            <div>
+            <label>nit de su empresa: </label>
+            <input id="empresaPredeterminada" name="empresaPredeterminada" for="empresaPredeterminada" type="text" placeholder="usuario">
+            </div>
+            <button>ingresar</button>
+        </form>
     </body>
 </html>

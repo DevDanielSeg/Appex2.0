@@ -161,3 +161,7 @@ button:focus{
 .display {
     display: flex;
 }
+
+a{
+    text-decoration: none;
+}

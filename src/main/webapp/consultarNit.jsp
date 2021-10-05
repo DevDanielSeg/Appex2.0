@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard
-    Created on : 4/10/2021, 1:01:22 p. m.
+    Document   : consultarNit
+    Created on : 5/10/2021, 4:33:08 p. m.
     Author     : turme
 --%>
 
@@ -34,35 +34,20 @@
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
-        <link rel="stylesheet" href="estilos/estilos2.css">
-        
-        <title>Appex</title>
-    </head>
+
+        <link rel="manifest" href="src/manifest.json">
+
+        <title>Consultar Mi Empresa</title>
+    </head
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("empresaPredeterminada"); %>
-        <h1 class="subseccion">Appex</h1>
-        <h3>Barra de navegacion</h3>
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada"); %>
 
-        <div class="display">
-            <div>
-                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
+        <form method="post" action="MiEmpresa.jsp">
+            <div class="form-group">
+                <label for="nit">Nit de su empresa</label>
+                <input value="<%=nitEmpresaPredeterminada %>" id="nit" type="text" for="nit" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
             </div>
-            <div class="">
-                <a href="dashboard.jsp" ><button>inicio</button></a>
-                <a href="FormularioEmpresas.jsp" > <button>Registro</button></a>
-                <a href="MiEmpresa.jsp  ?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>"><button>mis datos</button></a>
-                <a href="FormularioComercial.jsp"><button>descripcion</button></a>
-                <a href="ConsultaEmpresa.jsp"><button>catalogo</button></a>
-                <a href=""><button>Productos</button></a>
-                <a href="login.jsp" > <button>salir</button></a>
-            </div>
-            <div>
-            </div>
-        </div>
-
-        <div>cuadro de la izquierda</div>
-        <div>funciones</div>
-
+            <button type =" submit">Consultar</button>  
+        </form>
     </body>
 </html>

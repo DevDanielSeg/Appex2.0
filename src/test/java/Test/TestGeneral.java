@@ -1,7 +1,7 @@
 package Test;
 
-
 import java.sql.SQLException;
+import logica.LogicaEmpresa;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import persistencia.ConexionBD;
@@ -23,19 +23,19 @@ public class TestGeneral {
         Assert.assertTrue(con.isConectado(), "No hay conexión creada. ");
         con.desconectar();
         Assert.assertFalse(con.isConectado(), "No se cerró conexión. ");
-    }}
-    /**
+    }
+    
     
     
     
     @Test 
     public void verificarActualizacionEmpresa (){ 
-        int nit_empresa = 10;
+        String nit_consultar = "10";
         LogicaEmpresa LogicaEmpresa = new LogicaEmpresa ();
-        boolean actualizacion = LogicaEmpresa.consultarEmpresaNit(nit_empresa);
+        boolean actualizacion = LogicaEmpresa.consultarEmpresaPorNit(nit_consultar);
         Assert.assertTrue(actualizacion == true, "el valor de actualizacion es True");
         Assert.assertFalse(actualizacion == false, "el Valor de actualizacion es False");
-    }} * 
-     */
+    }}  
+     
     
 
