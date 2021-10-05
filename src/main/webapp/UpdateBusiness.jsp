@@ -46,12 +46,13 @@
     </head>
     <body>
         <h1>Actualizacion de Datos Empresas AppEx</h1>
+            <form action="UpdateBusiness_ctr.jsp" method="post">
+
         <%
             String nit_consultar = request.getParameter(("nit"));
             //int nit_consultar = Integer.parseInt(request.getParameter("nit"));
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
-            boolean actualizado = LogicaEmpresa.consultarEmpresaPorNit(nit_consultar);
-            if (actualizado == true) { %>esta mierda esta bien<%} else {%>la cagamos papa<%}
+            LogicaEmpresa.consultarEmpresaPorNit(nit_consultar);
                 for (Empresa e : LogicaEmpresa.getLista()) {
                     String nombreEmpresa = e.getNombreEmpresa();
                     String nit = e.getNit();
@@ -65,7 +66,6 @@
                 
 
         %>
-        <form action="FormularioEmpresas_ctr.jsp" method="post">
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre de la Empresa</label>
                 <input value="<%=nombreEmpresa%>" id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
@@ -85,11 +85,11 @@
             <div class="form-group">
                 <label>Tipo de Empresa</label><br>
                <% if(tipoEmpresa==1){%>
-                <input type="radio" value="true" name="tipoEmpresa" id="estadoEmpresaNatural" checked required><label for="estadoEmpresaNatural">Natural</label>
-                <input type="radio" value="false" name="tipoEmpresa" id="estadoEmpresaJuridica"><label for="estadoEmpresaJuridica">Jurídica</label>
+                <input type="radio" value="1" name="tipoEmpresa" id="estadoEmpresaNatural" checked required><label for="estadoEmpresaNatural">Natural</label>
+                <input type="radio" value="0" name="tipoEmpresa" id="estadoEmpresaJuridica"><label for="estadoEmpresaJuridica">Jurídica</label>
                 <%} else{ %>
-                <input type="radio" value="true" name="tipoEmpresa" id="estadoEmpresaNatural" ><label for="estadoEmpresaNatural">Natural</label>
-                <input type="radio" value="false" name="tipoEmpresa" id="estadoEmpresaJuridica" checked required><label for="estadoEmpresaJuridica">Jurídica</label>
+                <input type="radio" value="1" name="tipoEmpresa" id="estadoEmpresaNatural" ><label for="estadoEmpresaNatural">Natural</label>
+                <input type="radio" value="0" name="tipoEmpresa" id="estadoEmpresaJuridica" checked required><label for="estadoEmpresaJuridica">Jurídica</label>
                         <%}%>
                
             </div>
@@ -100,18 +100,18 @@
             <div class="form-group">
                 <label>Estado de la Empresa</label><br>
                 <% if(estadoEmpresa==1){%>
-                <input type="radio" value="true" name="estadoEmpresa" id="estadoEmpresaActivo" checked required><label for="estadoEmpresaActivo">Activo</label>
-                <input type="radio" value="false" name="estadoEmpresa" id="estadoEmpresaInactivo"><label for="estadoEmpresaInactivo">Inactivo</label>
+                <input type="radio" value="1" name="estadoEmpresa" id="estadoEmpresaActivo" checked required><label for="estadoEmpresaActivo">Activo</label>
+                <input type="radio" value="0" name="estadoEmpresa" id="estadoEmpresaInactivo"><label for="estadoEmpresaInactivo">Inactivo</label>
                  <%} else{ %>
-                 <input type="radio" value="true" name="estadoEmpresa" id="estadoEmpresaActivo"  required><label for="estadoEmpresaActivo">Activo</label>
-                <input type="radio" value="false" name="estadoEmpresa" id="estadoEmpresaInactivo" checked ><label for="estadoEmpresaInactivo">Inactivo</label>
+                 <input type="radio" value="1" name="estadoEmpresa" id="estadoEmpresaActivo"  required><label for="estadoEmpresaActivo">Activo</label>
+                <input type="radio" value="0" name="estadoEmpresa" id="estadoEmpresaInactivo" checked ><label for="estadoEmpresaInactivo">Inactivo</label>
                 <%}%>
             </div>
             <div class="form-group">
                 <label for="departamento">Departamento</label>
                 <select  class="form-control" id="departamento" name="departamento" title="Por favor Selecciona una opción" required>
-                    <option value = "">Seleccione una opción</option>
-                    <option selected="true" value = "Amazonas">Amazonas</option>
+                    <option selected="true" value="<%=departamento %>"><%=departamento %></option>
+                    <option value = "Amazonas">Amazonas</option>
                     <option value = "Antioquia">Antioquia</option>
                     <option value = "Arauca">Arauca</option>
                     <option value = "Atlántico">Atlántico</option>
@@ -147,8 +147,8 @@
             </div>
             <div class="form-group">
                 <label for="ciudadMunicipio">Ciudad ó Municipio</label>
-                <select value="<%=ciudadMunicipio %>" class="form-control" id="ciudadMunicipio" name="ciudadMunicipio" title="Por favor Selecciona una opción" required>
-                    <option value="">Seleccione una opción</option>
+                <select class="form-control" id="ciudadMunicipio" name="ciudadMunicipio" title="Por favor Selecciona una opción" required>
+                    <option selected="true" value="<%=ciudadMunicipio %>"><%=ciudadMunicipio %></option>
                     <option value="Abrego" class="oculto">Abrego</option>
                     <option value="Abriaquí">Abriaquí</option>
                     <option value="Acacías">Acacías</option>

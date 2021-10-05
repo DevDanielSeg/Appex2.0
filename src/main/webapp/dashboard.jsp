@@ -1,7 +1,7 @@
 <%-- 
-    Document   : FormularioEmpresas
-    Created on : 10/09/2021, 10:48:08 p. m.
-    Author     : Daniel Segura
+    Document   : dashboard
+    Created on : 4/10/2021, 1:01:22 p. m.
+    Author     : turme
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,32 +35,24 @@
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
         
-        <link rel="manifest" href="src/manifest.json">
+        <link rel="stylesheet" href="estilos/estilos2.css">
 
-        <title>Formulario Comercial</title>
+        <title>Appex</title>
     </head>
     <body>
-       
-        <h1>Ingresa tu empresa al mundo AppEx</h1>
-        <form action="FormularioComercial_ctr.jsp" method="post">
-            <div class="form-group">
-                <label for="nombreEmpresa">Nombre comercial de tu empresa</label>
-                <input id="nombreComercialEmpresa" name="nombreComercialEmpresa" type="text" maxlength="50" placeholder="Nombre comercial" required/>
+        <h1 class="subseccion">Subseccion</h1>
+        <h3 class="subseccion" >Configuracion</h3>
+        <form>
+            <div class="cards">
+                <p>
+                    Editar informacion
+                </p>
             </div>
-            
-            <div class="form-group">
-                <label for="imagenRepresentativa" class="file">Carga una imagen que te identifique</label>
-                <input class="oculto" id="imagenRepresentativa" name="imagenRepresentativa" type="file" accept="image/png, .jpeg, .jpg, image/gif" required/>
+            <div>
+                <p class="cards">
+                    Subir Productos
+                </p>
             </div>
-            
-            <div class="form-group">
-                <label for="descripcionComercial">Una descripción corta de lo que hace tu empresa</label><br>
-                <textarea id="descripcionComercial" name="descripcionComercial" maxlength="255" required/></textarea>
-            </div>
-            
-            
-            <button type="submit">Enviar</button><br>
-            
         </form>
     </body>
 </html>

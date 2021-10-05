@@ -145,9 +145,9 @@ public class EmpresaDAO {
         
         //sentencia sql que se va a ejecutar en la base de datos
         //donde vamos a especificar que dato quiero que se actualice 
-        String sql = "UPDATE dbappex2.empresa" +   //base de datos y tabla que queremos alterar
+        String sql = "UPDATE dbappex2.empresa " +   //base de datos y tabla que queremos alterar
                      "SET nombre_empresa ='"+ nombreEmpresa + "' ,nombre_representante = '" + nombreRepLegal + "', documento_representante = '" + noIdentidad +
-                                          "', tipo_empresa = '" +  tipoEmpresa + "',cod_ciiu = '" + codigoCiiu + "', estado_empresa = '" + estadoEmpresa + "', departamento = '" + departamento + 
+                                          "', tipo_empresa = '" +  tipoEmpresa + "', cod_ciiu = '" + codigoCiiu + "', estado_empresa = '" + estadoEmpresa + "', departamento = '" + departamento + 
                                           "', ciudad = '" + ciudadMunicipio + "' " +     // datos que queremos alterar
                      "WHERE nit_empresa = " + nit + " ";   //que empresa en especifico vamos a alterar
               
