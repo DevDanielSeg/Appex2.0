@@ -87,15 +87,11 @@ input[type="radio"]{
     margin: 1em 0.5em 1em; 
 }
 
-.file{
-    display: flex;
-    flex-direction: column;
-}
-.file:after {
+.file {
     font-family:  var(--font-secondary);
     border-radius: 0.5em;
     height: 2.5em;
-    content: 'Carga tu imagen';
+    content: '';
     text-align: center;
     width: 95%;
     margin: 0.3em 0.5em;
@@ -107,7 +103,7 @@ input[type="radio"]{
     justify-content: center;
 }
 
-.file:hover::after {   
+.file:hover {   
     color: #fff;
     background-color: var(--color-primario);
     border: 0.5px solid var(--color-primario);
@@ -159,4 +155,9 @@ button:focus{
 
 .subseccion {
     color: slategray;
+}
+
+
+.display {
+    display: flex;
 }

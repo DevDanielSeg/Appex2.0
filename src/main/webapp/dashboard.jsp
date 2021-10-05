@@ -54,5 +54,28 @@
                 </p>
             </div>
         </form>
+        
+        <div class="display">Navegacion
+            <div>
+                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
+            </div>
+            <div class="">
+                <button><a href="FormularioEmpresas.jsp">inicio</a></button>
+                <button>mi empresa</button>
+                <button>mi empresa</button>
+                <button>mi empresa</button>
+                <button>mi empresa</button>
+                <button>mi empresa</button>
+                <button>mi empresa</button>
+            </div>
+            <div></div>
+
+        </div>
+        
+        
+        <div>información</div>
+        <div>funciones</div>
+
+        
     </body>
 </html>
