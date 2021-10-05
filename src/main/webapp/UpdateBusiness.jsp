@@ -109,9 +109,9 @@
             </div>
             <div class="form-group">
                 <label for="departamento">Departamento</label>
-                <select value="<%=departamento %>" class="form-control" id="departamento" name="departamento" title="Por favor Selecciona una opción" required>
+                <select  class="form-control" id="departamento" name="departamento" title="Por favor Selecciona una opción" required>
                     <option value = "">Seleccione una opción</option>
-                    <option value = "Amazonas">Amazonas</option>
+                    <option selected="true" value = "Amazonas">Amazonas</option>
                     <option value = "Antioquia">Antioquia</option>
                     <option value = "Arauca">Arauca</option>
                     <option value = "Atlántico">Atlántico</option>
@@ -129,7 +129,7 @@
                     <option value = "Guaviare">Guaviare</option>
                     <option value = "Huila">Huila</option>
                     <option value = "La Guajira">La Guajira</option>
-                    <option value = "Magdalena">Magdalena</option>
+                    <option value = "Magdalena" >Magdalena</option>
                     <option value = "Meta">Meta</option>
                     <option value = "Nariño">Nariño</option>
                     <option value = "Norte de Santander">Norte de Santander</option>

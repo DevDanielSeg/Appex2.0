@@ -17,7 +17,7 @@ and open the template in the editor.
 :root {
     --font-primary: 'Roboto', sans-serif; 
     --font-secondary: 'Public Sans', sans-serif;
-    
+
     --color-primario: #f5af19;
     --color-secundary: #f12711;
     --color-base: #1d1d1f;
@@ -53,7 +53,7 @@ form, .cards{
     padding: 1em;
 }
 
-input[type="text"],input[type="number"], select{
+input[type="text"],input[type="number"], select, textArea{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -66,21 +66,53 @@ input[type="text"],input[type="number"], select{
     padding: 0.1em;
     fill:var(--color-primario);
 }
-input[type="text"]:focus,input[type="number"]:focus, select:focus{
+input[type="text"]:focus,input[type="number"]:focus, select:focus, textArea:focus{
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    
     font-family: var(--font-primary);
     font-size: 1em; 
     outline: 0;
     border-bottom: 2px solid var(--color-primario);
+}
 
+textArea{
+    border: 0.5px solid var(--color-primario);
+    height: 10em;
+    border-radius: 0.5em;
 }
 
 input[type="radio"]{
     width: auto;
     margin: 1em 0.5em 1em; 
 }
+
+.file{
+    display: flex;
+    flex-direction: column;
+}
+.file:after {
+    font-family:  var(--font-secondary);
+    border-radius: 0.5em;
+    height: 2.5em;
+    content: 'Carga tu imagen';
+    text-align: center;
+    width: 95%;
+    margin: 0.3em 0.5em;
+    color: var(--color-primario);
+    border: 0.5px solid var(--color-primario);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file:hover::after {   
+    color: #fff;
+    background-color: var(--color-primario);
+    border: 0.5px solid var(--color-primario);
+}
+
 
 .oculto{
     display: none;
@@ -113,7 +145,7 @@ button:focus{
 }
 
 .cajaHijo{
-    
+
 }
 
 @media (max-width: 600px) {
