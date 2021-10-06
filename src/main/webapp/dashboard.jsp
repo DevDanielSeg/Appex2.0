@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,7 +41,7 @@
         <title>Appex</title>
     </head>
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("empresaPredeterminada"); %>
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada"); %>
         <h1 class="subseccion">Appex</h1>
         <h3>Barra de navegacion</h3>
 
@@ -49,11 +50,11 @@
                 <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
             </div>
             <div class="">
-                <a href="dashboard.jsp" ><button>inicio</button></a>
-                <a href="FormularioEmpresas.jsp" > <button>Registro</button></a>
-                <a href="MiEmpresa.jsp  ?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>"><button>mis datos</button></a>
-                <a href="FormularioComercial.jsp"><button>descripcion</button></a>
-                <a href="ConsultaEmpresa.jsp"><button>catalogo</button></a>
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" ><button>inicio</button></a>
+                <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" > <button>Registro</button></a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>mis datos</button></a>
+                <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>descripcion</button></a>
+                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>catalogo</button></a>
                 <a href=""><button>Productos</button></a>
                 <a href="login.jsp" > <button>salir</button></a>
             </div>

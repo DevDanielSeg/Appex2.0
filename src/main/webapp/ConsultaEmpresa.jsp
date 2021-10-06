@@ -38,6 +38,7 @@
     <body>
         <div class="container mt-5"> 
             <h1 class="mb-3">Busqueda de empresas</h1>
+
             <%
                 String filtro = (request.getParameter("txtFiltro") == null) ? "" : request.getParameter("txtFiltro");
             %>

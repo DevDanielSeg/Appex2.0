@@ -52,7 +52,7 @@
             </div>
             <div>
             <label>nit de su empresa: </label>
-            <input id="empresaPredeterminada" name="empresaPredeterminada" for="empresaPredeterminada" type="text" placeholder="usuario">
+            <input id="nitEmpresaPredeterminada" name="nitEmpresaPredeterminada" for="nitEmpresaPredeterminada" type="text" placeholder="usuario">
             </div>
             <button>ingresar</button>
         </form>

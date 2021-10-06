@@ -4,6 +4,8 @@
     Author     : turme
 --%>
 
+<%@page import="logica.Empresa"%>
+<%@page import="logica.LogicaEmpresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -41,24 +43,37 @@
     </head
     <body>
         <h1>Mi empresa</h1>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
-
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+        
+        LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
+        LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
+            for (Empresa e : LogicaEmpresa.getLista()) {
+                String nombreEmpresa = e.getNombreEmpresa();
+                String nombreRepLegal = e.getNombreRepLegal();
+                String noIdentidad = e.getNoIdentidad();
+                int tipoEmpresa = e.isTipoEmpresa();
+                int codigoCiiu = e.getCodigoCiiu();
+                int estadoEmpresa = e.isEstadoEmpresa();
+                String departamento = e.getDepartamento();
+                String ciudadMunicipio = e.getCiudadMunicipio();
+                %>
 
         <div class="text-center">
-            <p>nombre: </p>
-            <p>nit: <%=nitEmpresaPredeterminada %> </p>
-            <p>nombre representante legal: </p>
-            <p>numero de documento: </p>
-            <p>tipo de empresa: </p>
-            <p>codigo ciiu: </p>
-            <p>estado de la empresa: </p>
-            <p>departamento: </p>
-            <p>ciudad/municipio: </p>
-            <div>
-                <a href=UpdateBusiness.jsp ><button>editar</button> </a>
-                <a href="dashboard.jsp" ><button>inicio</button> </a>
+            <p>nombre:  <%=nombreEmpresa %> </p>
+            <p>nit:  <%=nitEmpresaPredeterminada %> </p>
+            <p>nombre representante legal:  <%=nombreRepLegal %> </p>
+            <p>numero de documento:  <%=noIdentidad %> </p>
+            <p>tipo de empresa:  <%=tipoEmpresa %> </p>
+            <p>codigo ciiu:  <%=codigoCiiu %> </p>
+            <p>estado de la empresa:  <%=estadoEmpresa %> </p>
+            <p>departamento:  <%=departamento %></p>
+            <p>ciudad/municipio:  <%=ciudadMunicipio%></p>
+            <div><br>
+                <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>" ><button>editar</button> </a>
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>" ><button>inicio</button> </a>
 
             </div>
         </div>
+                <%}%>
     </body>
 </html>

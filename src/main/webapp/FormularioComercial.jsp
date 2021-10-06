@@ -43,6 +43,7 @@
        
         <h1>Ingresa tu empresa al mundo AppEx</h1>
         <form action="FormularioComercial_ctr.jsp" method="post">
+            <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre comercial de tu empresa</label>
                 <input id="nombreComercialEmpresa" name="nombreComercialEmpresa" type="text" maxlength="50" placeholder="Nombre comercial" required/>
@@ -59,7 +60,8 @@
             </div>
             
             
-            <button type="submit">Enviar</button><br>
+            <button type="submit">Enviar</button>
+            <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button type="button">Regresar</button> </a>
             
         </form>
         

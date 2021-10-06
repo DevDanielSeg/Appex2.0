@@ -15,6 +15,7 @@
     </head>
     <body>
         <%
+            String nitEmpresaPredeterminada = request.getParameter(("nitEmpresaPredeterminada"));
             String nombreEmpresa = request.getParameter("nombreEmpresa");
             String nit = request.getParameter("nit");
             String nombreRepLegal = request.getParameter("nombreRepLegal");
@@ -27,10 +28,9 @@
             Empresa e = new Empresa(nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
             boolean datos = LogicaEmpresa.actualizarDatosEmpresas(e);
-            if (datos == true) { %> se actualizaron exitosamente los datos<%}
-            else {%> no se pudieron actualizar los datos<%}
+            if (datos == true) { %> se actualizaron exitosamente los datos<%} else {%> no se pudieron actualizar los datos<%}
         %>       
-        <a href="dashboard.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver al inicio</button></a>
+        <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver al inicio</button></a>
 
     </body>
 </html>

@@ -14,6 +14,7 @@
     </head>
     <body>
         <%
+            String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
             String nombreEmpresa = request.getParameter("nombreEmpresa");
             String nit = request.getParameter("nit");
             String nombreRepLegal = request.getParameter("nombreRepLegal");
@@ -33,7 +34,7 @@
                 out.println("Información de Empresa no se guardó.");
             }
         %>
-        <a href="FormularioEmpresas.jsp"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver a la lista</button></a>
+        <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button type="submit" class="btn btn-primary" id="btnSubmit">Volver a la lista</button></a>
     </body>
 </html>
 

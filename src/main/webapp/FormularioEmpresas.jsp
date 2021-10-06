@@ -29,19 +29,20 @@
         <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="src/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
-        
+
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
+
         <link rel="manifest" href="src/manifest.json">
 
         <title>Formulario Empresas</title>
     </head>
     <body>
-       
+
         <h1>Ingreso de empresa al mundo AppEx</h1>
         <form action="FormularioEmpresas_ctr.jsp" method="post">
+            <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre de la Empresa</label>
                 <input id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
@@ -1149,7 +1150,7 @@
                 </select>
             </div>
             <button type="submit">Enviar</button><br>
-            
+
         </form>
 
     </body>
