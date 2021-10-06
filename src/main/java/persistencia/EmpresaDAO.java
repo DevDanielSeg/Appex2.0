@@ -89,15 +89,15 @@ public class EmpresaDAO {
         ConexionBD con = new ConexionBD();
         String sql = "SELECT e.id_empresa, e.nombre_empresa, e.nit_empresa, e.nombre_representante, e.documento_representante, e.tipo_empresa, e.cod_ciiu, e.estado_empresa, e.departamento, e.ciudad " +
                     "FROM empresa e " +                        
-                    "WHERE e.nombre_empresa LIKE '%" + filtro + "%' " +
-                    "OR e.nit_empresa LIKE '%" + filtro + "%' " +
-                    "OR e.nombre_representante LIKE '%" + filtro + "%' " +
-                    "OR e.documento_representante LIKE '%" + filtro + "%' " +
-                    "OR e.tipo_empresa LIKE '%" + filtro + "%' " +
-                    "OR e.cod_ciiu LIKE '%" + filtro + "%' " +
-                    "OR e.estado_empresa LIKE '%" + filtro + "%' " +
-                    "OR e.departamento LIKE '%" + filtro + "%' " +
-                    "OR e.ciudad LIKE '%" + filtro + "%' ";        
+                    "WHERE UPPER(e.nombre_empresa) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.nit_empresa) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.nombre_representante) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.documento_representante) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.tipo_empresa) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.cod_ciiu) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.estado_empresa) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.departamento) LIKE UPPER('%" + filtro + "%') " +
+                    "OR UPPER(e.ciudad) LIKE UPPER('%" + filtro + "%') ";        
         ResultSet rs = con.ejecutarQuery(sql);
         try {
             while (rs.next()) {
