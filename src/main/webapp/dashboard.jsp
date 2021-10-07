@@ -4,6 +4,9 @@
     Author     : turme
 --%>
 
+<%@page import="logica.Empresa"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="logica.LogicaEmpresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -35,13 +38,25 @@
         <meta name="theme-color" content="#f5af19">
         <meta name="msapplication-TileColor" content="#f5af19">
         <meta name="msapplication-TileImage" content="src/ms-icon-144x144.png">
-        
+
         <link rel="stylesheet" href="estilos/estilos2.css">
-        
+
         <title>Appex</title>
     </head>
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada"); %>
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+            LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
+            LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
+            for (Empresa e : LogicaEmpresa.getLista()) {
+                String nombreEmpresa = e.getNombreEmpresa();
+                String nombreRepLegal = e.getNombreRepLegal();
+                String noIdentidad = e.getNoIdentidad();
+                int tipoEmpresa = e.isTipoEmpresa();
+                int codigoCiiu = e.getCodigoCiiu();
+                int estadoEmpresa = e.isEstadoEmpresa();
+                String departamento = e.getDepartamento();
+                String ciudadMunicipio = e.getCiudadMunicipio();
+        %>
         <h1 class="subseccion">Appex</h1>
         <h3>Barra de navegacion</h3>
 
@@ -58,12 +73,48 @@
                 <a href=""><button>Productos</button></a>
                 <a href="login.jsp" > <button>salir</button></a>
             </div>
+        </div>
+        <h3>Mis datos</h3>
+
+        <table>
             <div>
+                <div><tr><hr>
+                    <p>
+                        Mi empresa:<%=nombreEmpresa%><br>
+                        descripcion de la empresa
+                        <br> hasta el momento no la hemos conectado a 
+                        <br> la base de datos asi que no hay descripcion
+                    </p>
+                </div></tr><hr>
+                <div><tr>
+                        Ubicacion de <%=nombreEmpresa%><br>
+                    Departamento: <%=departamento%><br>
+                    Municipio: <%=ciudadMunicipio%>
+
+                </div></tr><hr>
+                <div><tr> 
+                    <p>
+                        Codigo ciiu: <%=codigoCiiu%><br>
+                        Descripcion: <br>
+                        Fabricación de otros productos de cerámica y
+                        porcelana 
+                    </p>
+                </div></tr><hr>
+            </div>
+        </table>
+
+        <div>
+            <h3>Funciones</h3>
+            <div>
+                Funciones Principales
+            </div>
+            <div>
+                Funciones Secundarias
+            </div>
+            <div>
+                Funciones Terciarias
             </div>
         </div>
 
-        <div>cuadro de la izquierda</div>
-        <div>funciones</div>
-
-    </body>
+    </body><%}%>
 </html>

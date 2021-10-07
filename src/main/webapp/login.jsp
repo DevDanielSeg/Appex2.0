@@ -56,5 +56,7 @@
             </div>
             <button>ingresar</button>
         </form>
+        
+        <a href=""><button>registrarme</button></a>
     </body>
 </html>
