@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/09/2021, 12:19:41 a. m.
+    Author     : Daniel Segura
+*/
+
+
+
+.cajasCenter{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.cajaPadre{
+    display: grid;
+    gap:0.5em;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+}
+
+.cajaHijo{
+
+}
+
+/*Imagenes*/
+
+.maxWidthRes{
+    max-width: 25%;
+    margin: 0 auto;
+}
+
+.imgNav{
+    min-width: 2em;
+    max-width: 3em ;
+}
+
+@media (min-width: 1000px) {
+    .body{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .maxWidthRes{
+        width: 15%
+    }
+
+    nav{
+        padding: 0.8em 9em;
+    }
+
+}
+
