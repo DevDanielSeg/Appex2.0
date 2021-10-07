@@ -44,7 +44,7 @@
         <title>Appex</title>
     </head>
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+        <%String nitEmpresaPredeterminada = "11111" ;//request.getParameter("nitEmpresaPredeterminada");
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
             LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
             for (Empresa e : LogicaEmpresa.getLista()) {

@@ -42,7 +42,7 @@
     <body>
         <h1>Ingresa tu usuario</h1>
         <form action="dashboard.jsp" method="POST">
-            <img src="src/loginUser.png" alt="alt"/>
+            <img src="src/loginUser.png" align="center" width="100px" alt="alt"/>
             <div>
             <label>usuario: </label>
             <input type="text" placeholder="usuario">
