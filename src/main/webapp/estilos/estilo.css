@@ -92,7 +92,7 @@ input[type="radio"]{
     margin: 1em 0.5em 1em; 
 }
 
-.span {
+.file {
     font-family:  var(--font-secondary);
     border-radius: 0.5em;
     height: 2.5em;
@@ -108,7 +108,7 @@ input[type="radio"]{
     justify-content: center;
 }
 
-.span:hover {   
+.file:hover {   
     color: #fff;
     background-color: var(--color-primario);
     border: 0.5px solid var(--color-primario);
@@ -187,3 +187,6 @@ a{
     display: flex;
 }
 
+a{
+    text-decoration: none;
+}

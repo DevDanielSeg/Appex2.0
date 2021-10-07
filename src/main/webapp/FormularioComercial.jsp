@@ -71,7 +71,7 @@
             </div>
             
             <div class="form-group">
-                <label for="imagenRepresentativa">Carga una imagen que te identifique<span class="span"></span></label>
+                <label for="imagenRepresentativa">Carga una imagen que te identifique<span class="file"></span></label>
                 <input class="oculto" id="imagenRepresentativa" name="imagenRepresentativa" type="file" accept="image/png, .jpeg, .jpg, image/gif" required/>
             </div>
             
@@ -86,6 +86,16 @@
             
         </form>
         
-       <script src="js/ScriptFormularioComercial.js"></script>
+        <script>
+            var archivo = document.getElementById('imagenRepresentativa').files[0].name;
+            if(archivo === undefined){
+                var file = "Carga una imagen";                
+                var intro = document.getElementsByClassName('file')[0];
+                intro.innerHTML = file;
+            }else{             
+                var intro = document.getElementsByClassName('file')[0];
+                intro.innerHTML = archivo;
+            }
+        </script>
     </body>
 </html>
