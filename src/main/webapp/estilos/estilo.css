@@ -27,6 +27,7 @@ and open the template in the editor.
 body{
     font-family:  var(--font-secondary);
     color:var(--color-base);
+    margin: 0 0.5em;
 }
 
 h1, h2{
@@ -40,14 +41,8 @@ h2, .form-group{
     margin: 0.5em auto;
 }
 
-.titulo{
-    color: var(--color-base);
-}
 .text-center{
     text-align: center;
-}
-.text-left{
-    text-align: left;
 }
 
 form, .cards{
@@ -92,7 +87,7 @@ input[type="radio"]{
     margin: 1em 0.5em 1em; 
 }
 
-.span {
+.file {
     font-family:  var(--font-secondary);
     border-radius: 0.5em;
     height: 2.5em;
@@ -108,7 +103,7 @@ input[type="radio"]{
     justify-content: center;
 }
 
-.span:hover {   
+.file:hover {   
     color: #fff;
     background-color: var(--color-primario);
     border: 0.5px solid var(--color-primario);
@@ -118,18 +113,14 @@ input[type="radio"]{
 .oculto{
     display: none;
 }
-
-/* Botones */
-
 button{
     font-family:  var(--font-secondary);
     border-radius: 0.5em;
     border: 0.5px solid var(--color-primario);
-    padding: 0.5em;
-    
+    width: 5em;
+    height: 2.5em;
     color: #fff;
     background-color: var(--color-primario);
-    margin: 0.5em 1em;
 }
 
 button:hover,
@@ -140,37 +131,18 @@ button:focus{
     background-color: #fff;
 }
 
+/* Caja */
 
-.botonB{
-    
-    color: var(--color-primario);
-    border: 0.5px solid var(--color-primario);
-    background-color: #fff;
-    
+.cajaPadre{
+    display: grid;
+    gap:0.5em;
+    grid-auto-rows: 22rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
 }
 
-.botonB:hover,
-.botonB:focus{
+.cajaHijo{
 
-    color: #fff;
-    border: 0.5px solid var(--color-primario);
-    background-color: var(--color-primario);
 }
-
-nav{
-    padding: 0.8em 0em;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--color-base);
-    align-items: center;
-}
-
-a{
-    text-decoration: none;
-    color: var(--color-secundary);
-    margin: 0 1em;
-}
-
 
 @media (max-width: 600px) {
     form{
@@ -181,9 +153,15 @@ a{
     }
 }
 
+.subseccion {
+    color: slategray;
+}
 
 
 .display {
     display: flex;
 }
 
+a{
+    text-decoration: none;
+}

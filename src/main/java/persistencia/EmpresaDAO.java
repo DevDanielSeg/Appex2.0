@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import static javax.swing.UIManager.getString;
 import logica.Empresa;
+import logica.Producto;
 
 
 public class EmpresaDAO {
@@ -198,5 +199,8 @@ public class EmpresaDAO {
         }
         con.desconectar();
         return lista;
-    }}
+    }
+
+   
+}
     

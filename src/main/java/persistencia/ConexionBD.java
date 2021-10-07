@@ -11,7 +11,7 @@ public class ConexionBD {
     private String host = "localhost:3306";
     private String baseDatos = "dbappex2"; //nombre de la base de datos dbappex2
     private String username = "root"; //usuario de mysql
-    private String password = "1151159232"; //password de mysql
+    private String password = "briam"; //password de mysql
     private Connection conexion;
     private Statement ejecutor;
 

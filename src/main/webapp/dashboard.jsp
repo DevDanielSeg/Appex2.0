@@ -22,11 +22,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
-        <link rel="stylesheet" href="estilos/cajas.css">
-        <link rel="stylesheet" href="estilos/estilosMenu.css">
-
-
-
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -48,37 +43,79 @@
 
         <link rel="stylesheet" href="estilos/estilos2.css">
 
-        <title>AppEx</title>
+        <title>Appex</title>
     </head>
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+        <%String nitEmpresaPredeterminada = "11111" ;//request.getParameter("nitEmpresaPredeterminada");
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
             LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
             for (Empresa e : LogicaEmpresa.getLista()) {
+<<<<<<< HEAD
                 String nombreEmpresa = e.getNombreEmpresa();
+<<<<<<< HEAD
+=======
+                String nombreRepLegal = e.getNombreRepLegal();
+                String noIdentidad = e.getNoIdentidad();
+                int tipoEmpresa = e.isTipoEmpresa();
+>>>>>>> parent of f9288ee (dashboard 3.0)
+=======
+                String nombreEmpresa= e.getNombreEmpresa();
+>>>>>>> parent of 0eeef0a (Se le aplican estilos)
                 int codigoCiiu = e.getCodigoCiiu();
+                int estadoEmpresa = e.isEstadoEmpresa();
                 String departamento = e.getDepartamento();
                 String ciudadMunicipio = e.getCiudadMunicipio();
         %>
+        <h1 class="subseccion">Appex</h1>
+        <h3>Barra de navegacion</h3>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         <menu class="menu backgroundDeg">
             <div class="displayFlexCenter">
-
-                <label for="botonMenu" class="botonMenu" id="marginImg">
-                    <img src="src/assets/menu.svg" alt="" class="marginImg">
-                    <img src="src/assets/cerrar.svg" alt="" class="botonCerrar">
-                </label>
-
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" class="logoMenu menuBrillo"></a>
+=======
+        <div class="display">
+            <div>
+                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
             </div>
-            <input type="checkbox" id="botonMenu" class="menuInputCheckbox">        
-            <div class="desplegableMenu displayFlexCenterRes">
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
-                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
+            <div class="">
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>inicio</button></a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>mis datos</button></a>
+                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>catalogo</button></a>
+                <a href=""><button>Productos</button></a>
+                <a href="login.jsp" > <button>salir</button></a>
             </div>
+        </div>
+>>>>>>> parent of 0eeef0a (Se le aplican estilos)
+
+
+        <form>
+            <h3>Mis datos</h3>
+            <div>
+                <div><tr><hr>
+                    <p>
+                        Mi empresa:<%=nombreEmpresa%><br>
+                        descripcion de la empresa
+                        <br> hasta el momento no la hemos conectado a 
+                        <br> la base de datos asi que no hay descripcion
+                    </p>
+                </div></tr><hr>
+                <div><tr>
+                        Ubicacion de <%=nombreEmpresa%><br>
+                    Departamento: <%=departamento%><br>
+                    Municipio: <%=ciudadMunicipio%>
+
+                </div></tr><hr>
+                <div><tr> 
+                    <p>
+                        Codigo ciiu: <%=codigoCiiu%><br>
+                        Descripcion: <br>
+                        Fabricación de otros productos de cerámica y
+                        porcelana 
+                    </p>
+                </div></tr><hr>
+            </div>
+<<<<<<< HEAD
         </menu>
         <div class="body">
             <h1 class="titulo">Tu menu - AppEx</h1>
@@ -113,8 +150,84 @@
                     <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"> <button>Registrar Empresa</button></a>
                     <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Datos Comerciales</button></a>
                 </div>
+=======
+        <div class="display">
+            <div>
+                <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
             </div>
+            <div class="">
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" ><button>inicio</button></a>
+                <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" > <button>Registro</button></a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>mis datos</button></a>
+                <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>descripcion</button></a>
+                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>catalogo</button></a>
+                <a href=""><button>Productos</button></a>
+                <a href="login.jsp" > <button>salir</button></a>
+            </div>
+        </div>
+        <h3>Mis datos</h3>
 
+        <table>
+            <div>
+                <div><tr><hr>
+                    <p>
+                        Mi empresa:<%=nombreEmpresa%><br>
+                        descripcion de la empresa
+                        <br> hasta el momento no la hemos conectado a 
+                        <br> la base de datos asi que no hay descripcion
+                    </p>
+                </div></tr><hr>
+                <div><tr>
+                        Ubicacion de <%=nombreEmpresa%><br>
+                    Departamento: <%=departamento%><br>
+                    Municipio: <%=ciudadMunicipio%>
+
+                </div></tr><hr>
+                <div><tr> 
+                    <p>
+                        Codigo ciiu: <%=codigoCiiu%><br>
+                        Descripcion: <br>
+                        Fabricación de otros productos de cerámica y
+                        porcelana 
+                    </p>
+                </div></tr><hr>
+            </div>
+        </table>
+
+        <div>
+            <h3>Funciones</h3>
+            <div>
+                Funciones Principales
+            </div>
+            <div>
+                Funciones Secundarias
+            </div>
+            <div>
+                Funciones Terciarias
+>>>>>>> parent of f9288ee (dashboard 3.0)
+=======
+        </form>
+
+        <div>
+            <h3>Funciones</h3><br><hr>
+            <div>
+                <h4>servicios</h4><hr>
+                <a><button>agregar productos</button></a>
+                <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"> <button>Registro</button></a>
+                <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>descripcion</button></a>
+
+
+            </div><hr>
+            <div>
+                <h4>configuracion</h4><hr>
+                <a><button>cambiar contraseña</button></a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>editar datos</button></a>
+>>>>>>> parent of 0eeef0a (Se le aplican estilos)
+            </div>
+        </div>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
             <div class="cards">
                 <h3>Configuraciones</h3><br>
                 <div class="displayFlexCenterRes">
@@ -124,5 +237,10 @@
             </div>
 
         </div>
+=======
+>>>>>>> parent of f9288ee (dashboard 3.0)
+=======
+
+>>>>>>> parent of 0eeef0a (Se le aplican estilos)
     </body><%}%>
-</html
+</html>
