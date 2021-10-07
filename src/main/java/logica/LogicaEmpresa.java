@@ -7,6 +7,8 @@ import org.testng.Assert;
 import persistencia.EmpresaDAO;
 
 public class LogicaEmpresa {
+        //este se modifico 
+
 
     private ArrayList<Empresa> lista;
 

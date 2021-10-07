@@ -130,6 +130,7 @@ public class EmpresaDAO {
      */
      
     public boolean actualizarEmpresa(Empresa e) {
+        //este se modifico
         ConexionBD con = new ConexionBD();
         //recogemos los datos de la empresa y los guardamos 
         //en unas variables para poder usarlos mas adelante
