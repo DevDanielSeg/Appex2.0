@@ -44,25 +44,6 @@
     <div class="body">
         <h1 class="titulo">Ingresa tu usuario </h1>
         <form action="dashboard.jsp" method="POST">
-<<<<<<< HEAD
-            <img src="src/loginUser.png" align="center" width="100px" alt="alt"/>
-            <div>
-            <label>usuario: </label>
-            <input type="text" placeholder="usuario">
-            </div>
-            <div>
-            <label>contraseña:  </label>
-            <input type="text" placeholder="usuario">    
-            </div>
-            <div>
-            <label>nit de su empresa: </label>
-            <input id="nitEmpresaPredeterminada" name="nitEmpresaPredeterminada" for="nitEmpresaPredeterminada" type="text" placeholder="usuario">
-            </div>
-            <button>ingresar</button>
-        </form>
-        
-        <a href=""><button>registrarme</button></a>
-=======
             <div class="cajasCenter">
                     <img class="maxWidthRes" src="src/loginUser.png" alt="alt"/>              
                 </div>
@@ -93,6 +74,6 @@
         <br>
         <br>
     </div>
->>>>>>> 0eeef0ae169029cc61b216980ae319748adddb49
+
     </body>
 </html>
