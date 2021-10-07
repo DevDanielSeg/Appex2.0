@@ -40,8 +40,9 @@
         <title>Identificacion</title>
     </head
     <body>
-        <h1>Login</h1>
+        <h1>Ingresa tu usuario</h1>
         <form action="dashboard.jsp" method="POST">
+            <img src="src/loginUser.png" alt="alt"/>
             <div>
             <label>usuario: </label>
             <input type="text" placeholder="usuario">
