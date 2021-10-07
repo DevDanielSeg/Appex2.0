@@ -58,6 +58,7 @@
                 LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
                 for (Empresa e : LogicaEmpresa.getLista()) {
                     String nombreEmpresa = e.getNombreEmpresa();
+                    String nit = e.getNit();
                     String nombreRepLegal = e.getNombreRepLegal();
                     String noIdentidad = e.getNoIdentidad();
                     int tipoEmpresa = e.isTipoEmpresa();
@@ -74,7 +75,7 @@
             </div>
             <div class="form-group">
                 <label for="nit">NIT de empresa</label>
-                <input value="<%=nitEmpresaPredeterminada%>" id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
+                <input value="<%=nit%>" id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
             </div>
             <div class="form-group">
                 <label for="nombreRepLegal">Nombre del Representante Legal o propietario</label>

@@ -45,6 +45,7 @@
     </head
     <body>
         <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+        
         LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
         LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
             for (Empresa e : LogicaEmpresa.getLista()) {
@@ -82,7 +83,7 @@
         <h1>Mi empresa</h1>             
         
         <div class="text-center">
-            <p>nombre:  <%=nombreEmpresa %></p>
+            <p>nombre:  <%=nombreEmpresa %> </p>
             <p>nit:  <%=nitEmpresaPredeterminada %> </p>
             <p>nombre representante legal:  <%=nombreRepLegal %> </p>
             <p>numero de documento:  <%=noIdentidad %> </p>
