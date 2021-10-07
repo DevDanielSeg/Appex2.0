@@ -48,12 +48,8 @@
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
             LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
             for (Empresa e : LogicaEmpresa.getLista()) {
-                String nombreEmpresa = e.getNombreEmpresa();
-                String nombreRepLegal = e.getNombreRepLegal();
-                String noIdentidad = e.getNoIdentidad();
-                int tipoEmpresa = e.isTipoEmpresa();
+                String nombreEmpresa= e.getNombreEmpresa();
                 int codigoCiiu = e.getCodigoCiiu();
-                int estadoEmpresa = e.isEstadoEmpresa();
                 String departamento = e.getDepartamento();
                 String ciudadMunicipio = e.getCiudadMunicipio();
         %>
@@ -65,18 +61,17 @@
                 <img src="src/apple-icon-180x180.png" width="50px" alt="alt"/>
             </div>
             <div class="">
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" ><button>inicio</button></a>
-                <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" > <button>Registro</button></a>
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>inicio</button></a>
                 <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>mis datos</button></a>
-                <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>descripcion</button></a>
                 <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>catalogo</button></a>
                 <a href=""><button>Productos</button></a>
                 <a href="login.jsp" > <button>salir</button></a>
             </div>
         </div>
-        <h3>Mis datos</h3>
 
-        <table>
+
+        <form>
+            <h3>Mis datos</h3>
             <div>
                 <div><tr><hr>
                     <p>
@@ -101,20 +96,25 @@
                     </p>
                 </div></tr><hr>
             </div>
-        </table>
+        </form>
 
         <div>
-            <h3>Funciones</h3>
+            <h3>Funciones</h3><br><hr>
             <div>
-                Funciones Principales
-            </div>
+                <h4>servicios</h4><hr>
+                <a><button>agregar productos</button></a>
+                <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"> <button>Registro</button></a>
+                <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>descripcion</button></a>
+
+
+            </div><hr>
             <div>
-                Funciones Secundarias
-            </div>
-            <div>
-                Funciones Terciarias
+                <h4>configuracion</h4><hr>
+                <a><button>cambiar contraseña</button></a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>editar datos</button></a>
             </div>
         </div>
 
+
     </body><%}%>
-</html>
+</html

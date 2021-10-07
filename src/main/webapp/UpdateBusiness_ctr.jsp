@@ -17,7 +17,6 @@
         <%
             String nitEmpresaPredeterminada = request.getParameter(("nitEmpresaPredeterminada"));
             String nombreEmpresa = request.getParameter("nombreEmpresa");
-            String nit = request.getParameter("nit");
             String nombreRepLegal = request.getParameter("nombreRepLegal");
             String noIdentidad = request.getParameter("noIdentidad");
             int tipoEmpresa = Integer.parseInt(request.getParameter("tipoEmpresa"));
@@ -25,7 +24,7 @@
             int estadoEmpresa = Integer.parseInt(request.getParameter("estadoEmpresa"));
             String departamento = request.getParameter("departamento");
             String ciudadMunicipio = request.getParameter("ciudadMunicipio");
-            Empresa e = new Empresa(nombreEmpresa, nit, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
+            Empresa e = new Empresa(nombreEmpresa, nitEmpresaPredeterminada, nombreRepLegal, noIdentidad, tipoEmpresa, codigoCiiu, estadoEmpresa, departamento, ciudadMunicipio);
             LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
             boolean datos = LogicaEmpresa.actualizarDatosEmpresas(e);
             if (datos == true) { %> se actualizaron exitosamente los datos<%} else {%> no se pudieron actualizar los datos<%}
