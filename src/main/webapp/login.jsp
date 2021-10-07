@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
+        <link rel="stylesheet" href="estilos/cajas.css">
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -40,8 +41,10 @@
         <title>Identificacion</title>
     </head
     <body>
-        <h1>Ingresa tu usuario</h1>
+    <div class="body">
+        <h1 class="titulo">Ingresa tu usuario </h1>
         <form action="dashboard.jsp" method="POST">
+<<<<<<< HEAD
             <img src="src/loginUser.png" align="center" width="100px" alt="alt"/>
             <div>
             <label>usuario: </label>
@@ -59,5 +62,37 @@
         </form>
         
         <a href=""><button>registrarme</button></a>
+=======
+            <div class="cajasCenter">
+                    <img class="maxWidthRes" src="src/loginUser.png" alt="alt"/>              
+                </div>
+            
+                <div class="form-group">
+                    <label>Usuario:</label>
+                    <input type="text" placeholder="Usuario">
+                </div>
+                
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="text" placeholder="Contraseña">    
+                </div>
+
+                <div class="form-group">
+                    <label>Nit de su empresa:</label>
+                    <input id="nitEmpresaPredeterminada" name="nitEmpresaPredeterminada" for="nitEmpresaPredeterminada" type="text" placeholder="Nit de tu empresa">
+                </div>
+                <div class="form-group text-center">
+                    <button>ingresar</button>
+                </div>
+            </form>
+        <br>
+        <section class="text-center">
+            <button href="" class="botonB">Registrarse</button>
+        </section>
+        <br>
+        <br>
+        <br>
+    </div>
+>>>>>>> 0eeef0ae169029cc61b216980ae319748adddb49
     </body>
 </html>
