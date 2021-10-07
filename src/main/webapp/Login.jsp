@@ -16,7 +16,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
-        <link rel="stylesheet" href="estilos/cajas.css">
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -41,6 +40,7 @@
         <title>Identificacion</title>
     </head
     <body>
+<<<<<<< HEAD:src/main/webapp/Login.jsp
 <<<<<<< HEAD:src/main/webapp/Login.jsp
     <div class="body">
         <h1 class="titulo">Ingresa tu usuario </h1>
@@ -79,6 +79,11 @@
 =======
         <h1>Login</h1>
         <form action="dashboard.jsp" method="POST">
+=======
+        <h1>Ingresa tu usuario</h1>
+        <form action="dashboard.jsp" method="POST">
+            <img src="src/loginUser.png" alt="alt"/>
+>>>>>>> parent of 0eeef0a (Se le aplican estilos):src/main/webapp/login.jsp
             <div>
             <label>usuario: </label>
             <input type="text" placeholder="usuario">
@@ -95,6 +100,9 @@
         </form>
         
         <a href=""><button>registrarme</button></a>
+<<<<<<< HEAD:src/main/webapp/Login.jsp
 >>>>>>> parent of 72c8110 (FormularioComercial):src/main/webapp/login.jsp
+=======
+>>>>>>> parent of 0eeef0a (Se le aplican estilos):src/main/webapp/login.jsp
     </body>
 </html>

@@ -18,8 +18,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
-        <link rel="stylesheet" href="estilos/cajas.css">
-        <link rel="stylesheet" href="estilos/estilosMenu.css">
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -44,6 +42,7 @@
         <title>Mi empresa</title>
     </head
     <body>
+        <h1>Mi empresa</h1>
         <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
         
         LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
@@ -58,30 +57,7 @@
                 String departamento = e.getDepartamento();
                 String ciudadMunicipio = e.getCiudadMunicipio();
                 %>
-                
-        <menu class="menu backgroundDeg">
-            <div class="displayFlexCenter">
 
-                <label for="botonMenu" class="botonMenu" id="marginImg">
-                    <img src="src/assets/menu.svg" alt="" class="marginImg">
-                    <img src="src/assets/cerrar.svg" alt="" class="botonCerrar">
-                </label>
-
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" class="logoMenu menuBrillo"></a>
-            </div>
-            <input type="checkbox" id="botonMenu" class="menuInputCheckbox">        
-            <div class="desplegableMenu displayFlexCenterRes">
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
-                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
-            </div>
-        </menu>
-                
-                
-        <h1>Mi empresa</h1>             
-        
         <div class="text-center">
             <p>nombre:  <%=nombreEmpresa %> </p>
             <p>nit:  <%=nitEmpresaPredeterminada %> </p>
