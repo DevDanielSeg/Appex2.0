@@ -15,8 +15,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%//este se modifico %>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,12 +69,12 @@
             <div class="desplegableMenu displayFlexCenterRes">
                 <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
                 <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
+                <a href="#">Mis Productos</a>
+                <a href="index.html" >Salir</a>
             </div>
         </menu>
         <h1>Actualizacion de Datos Empresas AppEx</h1>
+        
         <form action="UpdateBusiness_ctr.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" method="POST">
 
             <%

@@ -23,7 +23,11 @@ and open the template in the editor.
     grid-auto-rows: 22rem;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
 }
-
+.cajaPadreTwo{
+    display: grid;
+    gap:0.3em;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+}
 .cajaHijo{
 
 }

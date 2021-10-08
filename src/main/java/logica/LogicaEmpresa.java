@@ -7,8 +7,7 @@ import org.testng.Assert;
 import persistencia.EmpresaDAO;
 
 public class LogicaEmpresa {
-        //este se modifico 
-
+    //este se modifico 
 
     private ArrayList<Empresa> lista;
 
@@ -76,14 +75,17 @@ public class LogicaEmpresa {
             return false;
         }
     }
-    
-    public boolean actualizarDatosEmpresas(Empresa e){
+
+    public boolean actualizarDatosEmpresas(Empresa e) {
         EmpresaDAO dao = new EmpresaDAO();
         boolean datos = dao.actualizarEmpresa(e);
         String comprobante;
-        if (datos==true){comprobante = "1";}
-        else {comprobante = "0";}
-        Assert.assertEquals(comprobante,"1");
+        if (datos == true) {
+            comprobante = "1";
+        } else {
+            comprobante = "0";
+        }
+        Assert.assertEquals(comprobante, "1");
         return datos;
     }
 }

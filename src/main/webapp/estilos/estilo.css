@@ -52,6 +52,10 @@ h2, .form-group{
     text-align: left;
 }
 
+.text-right{
+    text-align: right;
+}
+
 form, .cards{
     margin: 2em;
     background-color: white;
@@ -94,7 +98,7 @@ input[type="radio"]{
     margin: 1em 0.5em 1em; 
 }
 
-.file {
+.span {
     font-family:  var(--font-secondary);
     border-radius: 0.5em;
     height: 2.5em;
@@ -110,7 +114,7 @@ input[type="radio"]{
     justify-content: center;
 }
 
-.file:hover {   
+.span:hover {   
     color: #fff;
     background-color: var(--color-primario);
     border: 0.5px solid var(--color-primario);

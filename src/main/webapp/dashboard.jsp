@@ -78,9 +78,8 @@
             <div class="desplegableMenu displayFlexCenterRes">
                 <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
                 <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
+                <a href="#">Mis Productos</a>
+                <a href="index.html" >Salir</a>
             </div>
         </menu>
         <div class="body">
@@ -97,19 +96,8 @@
                     <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante arcu, vestibulum vitae leo egestas, viverra pretium quam. Praesent tempor efficitur metus, luctus fermentum ex finibus vel. Curabitur dapibus porta eros, et commodo felis porta sit amet. Nunc a eros non odio molestie laoreet. Aenean hendrerit quis lacus dignissim semper. Sed ut leo laoreet nunc vehicula imperdiet.</p>
                 </div>
                 <br>
-                <div class="displayFlexCenterRes">
-                    <div>
-                        <h4>Codigo ciiu: <%=codigoCiiu%></h4>
-                        <p>Fabricación de otros productos de cerámica y porcelana </p>
-                    </div>
-                    <br>    
-                    <div class="form-group text-left">
-                        <h4>Ubicacion:</h4>
-                        <p class="text-center">Departamento: <strong><%=departamento%></strong> Municipio: <strong><%=ciudadMunicipio%></strong></p>
-                    </div>
-                </div>
             </div> 
-            <div class="cajaPadre">
+            <div class="cajaPadreTwo">
                 <div class="cards">
                     <h3>Opciones</h3><br>
                     <div class="displayFlexCenterRes">

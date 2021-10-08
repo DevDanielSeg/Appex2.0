@@ -45,7 +45,9 @@
         <title>Formulario Comercial</title>
     </head>
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
+        <%
+            String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+        %>
        <menu class="menu backgroundDeg">
             <div class="displayFlexCenter">
 
@@ -60,9 +62,8 @@
             <div class="desplegableMenu displayFlexCenterRes">
                 <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
                 <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
+                <a href="#">Mis Productos</a>
+                <a href="index.html" >Salir</a>
             </div>
         </menu>
         <h1>Ingresa tu empresa al mundo AppEx</h1>
@@ -73,7 +74,7 @@
             </div>
             
             <div class="form-group">
-                <label for="imagenRepresentativa">Carga una imagen que te identifique<span class="file"></span></label>
+                <label for="imagenRepresentativa">Carga una imagen que te identifique<span class="span"></span></label>
                 <input class="oculto" id="imagenRepresentativa" name="imagenRepresentativa" type="file" accept="image/png, .jpeg, .jpg, image/gif" required/>
             </div>
             
@@ -87,17 +88,6 @@
             <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button type="button">Regresar</button> </a>
             
         </form>
-        
-        <script>
-            var archivo = document.getElementById('imagenRepresentativa').files[0].name;
-            if(archivo === undefined){
-                var file = "Carga una imagen";                
-                var intro = document.getElementsByClassName('file')[0];
-                intro.innerHTML = file;
-            }else{             
-                var intro = document.getElementsByClassName('file')[0];
-                intro.innerHTML = archivo;
-            }
-        </script>
+            <script src=js/scriptFormularioComercial.js></script>
     </body>
 </html>

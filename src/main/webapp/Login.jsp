@@ -43,19 +43,22 @@
         <title>Identificacion</title>
     </head
     <body>
-
-    <div class="body">
-        <h1 class="titulo">Ingresa tu usuario </h1>
-        <form action="dashboard.jsp" method="POST">
-            <div class="cajasCenter">
+        <section class="text-right">
+            <a href="index.html"><button>Inicio</button></a>
+        </section>
+        
+        <div class="body">
+            <h1 class="titulo">Ingresa tu usuario </h1>
+            <form action="dashboard.jsp" method="POST">
+                <div class="cajasCenter">
                     <img class="maxWidthRes" src="src/loginUser.png" alt="alt"/>              
                 </div>
-            
+
                 <div class="form-group">
                     <label>Usuario:</label>
                     <input type="text" placeholder="Usuario">
                 </div>
-                
+
                 <div class="form-group">
                     <label>Contraseña:</label>
                     <input type="text" placeholder="Contraseña">    
@@ -69,13 +72,13 @@
                     <button>ingresar</button>
                 </div>
             </form>
-        <br>
-        <section class="text-center">
-            <a href="FormularioEmpresas.jsp"><button>Registrar Empresa</button></a>
-        </section>
-        <br>
-        <br>
-        <br>
-    </div>
+            <br>
+            <section class="text-center">
+                <a href="FormularioEmpresas.jsp"><button>Registrar Empresa</button></a>
+            </section>
+            <br>
+            <br>
+            <br>
+        </div>
     </body>
 </html>

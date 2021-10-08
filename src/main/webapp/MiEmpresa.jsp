@@ -75,56 +75,58 @@
             <div class="desplegableMenu displayFlexCenterRes">
                 <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
                 <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
-                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
-                <a href="">Productos</a>
-                <a href="Login.jsp" >Salir</a>
+                <a href="#">Mis Productos</a>
+                <a href="index.html" >Salir</a>
             </div>
         </menu>
-
-        <h1 class="titulo">Mi Empresa - AppEx</h1>
-        <div class="cards">
-            <h2 class="titulo">Mis datos</h2>
-            <div class="form-group">
-                <p>Mi empresa:</p>
-                <h3 class="text-center"><%=nombreEmpresa%></h3>
-            </div>
-
-            <div class="form-group">
-                <p>Nit:</p>
-                <h3 class="text-center"><%=nitEmpresaPredeterminada%></h3>
-            </div>
-
-            <div class="form-group">
-                <h4>Descripción:</h4><br>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante arcu, vestibulum vitae leo egestas, viverra pretium quam. Praesent tempor efficitur metus, luctus fermentum ex finibus vel. Curabitur dapibus porta eros, et commodo felis porta sit amet. Nunc a eros non odio molestie laoreet. Aenean hendrerit quis lacus dignissim semper. Sed ut leo laoreet nunc vehicula imperdiet.</p>
-            </div>
-            <br>
-            <div class="displayFlexCenterRes">
-                <div>
-                    <h4>Codigo ciiu: <%=codigoCiiu%></h4>
-                    <p>Fabricación de otros productos de cerámica y porcelana </p>
-                    <br>
-                    <h4>Ubicacion:</h4>
-                    <p class="text-center">Departamento: <strong><%=departamento%></strong> Municipio: <strong><%=ciudadMunicipio%></strong></p>
+        <div class="body">
+            <h1 class="titulo">Mi Empresa - AppEx</h1>
+            <div class="cards">
+                <h2 class="titulo">Mis datos</h2>
+                <div class="form-group">
+                    <p>Mi empresa:</p>
+                    <h3 class="text-center"><%=nombreEmpresa%></h3>
                 </div>
-                <br>    
-                <div class="form-group text-left">        
-                    <p>Nombre representante legal: <strong><%=nombreRepLegal%></strong></p>
-                    <br>
-                    <p>Numero de documento: <strong><%=noIdentidad%></strong></p>
-                    <br>
-                    <p>Tipo de empresa: <strong><%=tipoEmpresa%></strong></p>
-                    <br>
-                    <p>Estado de la empresa: <strong><%=estadoEmpresa%></strong></p>
-                </div>
-            </div>
-            <br><br>
-            <div class="displayFlexCenterRes">
-                <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar</button></a>
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Inicio</button></a>
-            </div>
-        </div> 
 
-        <%}%>
+                <div class="form-group">
+                    <p>Nit:</p>
+                    <h3 class="text-center"><%=nitEmpresaPredeterminada%></h3>
+                </div>
+
+                <div class="form-group">
+                    <h4>Descripción:</h4><br>
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante arcu, vestibulum vitae leo egestas, viverra pretium quam. Praesent tempor efficitur metus, luctus fermentum ex finibus vel. Curabitur dapibus porta eros, et commodo felis porta sit amet. Nunc a eros non odio molestie laoreet. Aenean hendrerit quis lacus dignissim semper. Sed ut leo laoreet nunc vehicula imperdiet.</p>
+                </div>
+                <br>
+                <div class="displayFlexCenterRes">
+                    <div>
+                        <h4>Codigo ciiu: <%=codigoCiiu%></h4>
+                        <p>Fabricación de otros productos de cerámica y porcelana </p>
+                        <br>
+                        <h4>Ubicacion:</h4>
+                        <p class="text-center">Departamento: <strong><%=departamento%></strong> Municipio: <strong><%=ciudadMunicipio%></strong></p>
+                    </div>
+                    <br>    
+                    <div class="form-group text-left">        
+                        <p>Nombre representante legal: <strong><%=nombreRepLegal%></strong></p>
+                        <br>
+                        <p>Numero de documento: <strong><%=noIdentidad%></strong></p>
+                        <br>
+                        <p>Tipo de empresa: <strong><%=tipoEmpresa%></strong></p>
+                        <br>
+                        <p>Estado de la empresa: <strong><%=estadoEmpresa%></strong></p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="displayFlexCenterRes">
+                    <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar</button></a>
+                    <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Inicio</button></a>
+                </div>
+            </div> 
+
+            <%}%>
+
+
+        </div>
     </body>
 </html>
