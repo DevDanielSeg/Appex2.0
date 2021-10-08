@@ -76,6 +76,7 @@
             <div class="form-group">
                 <label for="imagenRepresentativa">Carga una imagen que te identifique<span class="span"></span></label>
                 <input class="oculto" id="imagenRepresentativa" name="imagenRepresentativa" type="file" accept="image/png, .jpeg, .jpg, image/gif" required/>
+                <input type="text" name="nitEmpresaPredeterminada" value="<%=nitEmpresaPredeterminada%>" class="oculto">
             </div>
             
             <div class="form-group">
