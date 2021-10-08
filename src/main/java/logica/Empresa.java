@@ -157,6 +157,14 @@ public class Empresa {
     }
     
     public String getEstadoEmpresa() {
+        if (estadoEmpresa== 1) {
+            return "Natural";
+        }else{
+            return "Juridica";
+        }
+    }
+    
+    public String getTipoEmpresa() {
         if (tipoEmpresa== 1) {
             return "Activa";
         }else{

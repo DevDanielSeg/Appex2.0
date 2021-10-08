@@ -1,15 +1,4 @@
 
-
-:root {
-    --font-primary: 'Roboto', sans-serif; 
-    --font-secondary: 'Public Sans', sans-serif;
-
-    --color-primario: #f5af19;
-    --color-secundary: #f12711;
-    --color-base: #1d1d1f;
-
-}
-
 .backgroundDeg{
     background-color: var(--color-base);
     color: var(--color-primario);

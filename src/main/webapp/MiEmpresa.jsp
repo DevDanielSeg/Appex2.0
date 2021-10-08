@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-        <%//este se modifico %>
+    <%//este se modifico %>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -46,21 +46,21 @@
         <title>Mi empresa</title>
     </head
     <body>
-        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
-        
-        LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
-        LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
+        <%
+            String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");
+            LogicaEmpresa LogicaEmpresa = new LogicaEmpresa();
+            LogicaEmpresa.consultarEmpresaPorNit(nitEmpresaPredeterminada);
             for (Empresa e : LogicaEmpresa.getLista()) {
                 String nombreEmpresa = e.getNombreEmpresa();
                 String nombreRepLegal = e.getNombreRepLegal();
                 String noIdentidad = e.getNoIdentidad();
-                int tipoEmpresa = e.isTipoEmpresa();
+                String tipoEmpresa = e.getTipoEmpresa();
                 int codigoCiiu = e.getCodigoCiiu();
-                int estadoEmpresa = e.isEstadoEmpresa();
+                String estadoEmpresa = e.getEstadoEmpresa();
                 String departamento = e.getDepartamento();
                 String ciudadMunicipio = e.getCiudadMunicipio();
-                %>
-                
+        %>
+
         <menu class="menu backgroundDeg">
             <div class="displayFlexCenter">
 
@@ -80,26 +80,51 @@
                 <a href="Login.jsp" >Salir</a>
             </div>
         </menu>
-                
-                
-        <h1>Mi empresa</h1>             
-        
-        <div class="text-center">
-            <p>nombre:  <%=nombreEmpresa %> </p>
-            <p>nit:  <%=nitEmpresaPredeterminada %> </p>
-            <p>nombre representante legal:  <%=nombreRepLegal %> </p>
-            <p>numero de documento:  <%=noIdentidad %> </p>
-            <p>tipo de empresa:  <%=tipoEmpresa %> </p>
-            <p>codigo ciiu:  <%=codigoCiiu %> </p>
-            <p>estado de la empresa:  <%=estadoEmpresa %> </p>
-            <p>departamento:  <%=departamento %></p>
-            <p>ciudad/municipio:  <%=ciudadMunicipio%></p>
-            <div><br>
-                <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>" ><button>editar</button> </a>
-                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada %>" ><button>inicio</button> </a>
 
+        <h1 class="titulo">Mi Empresa - AppEx</h1>
+        <div class="cards">
+            <h2 class="titulo">Mis datos</h2>
+            <div class="form-group">
+                <p>Mi empresa:</p>
+                <h3 class="text-center"><%=nombreEmpresa%></h3>
             </div>
-        </div>
-                <%}%>
+
+            <div class="form-group">
+                <p>Nit:</p>
+                <h3 class="text-center"><%=nitEmpresaPredeterminada%></h3>
+            </div>
+
+            <div class="form-group">
+                <h4>Descripción:</h4><br>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante arcu, vestibulum vitae leo egestas, viverra pretium quam. Praesent tempor efficitur metus, luctus fermentum ex finibus vel. Curabitur dapibus porta eros, et commodo felis porta sit amet. Nunc a eros non odio molestie laoreet. Aenean hendrerit quis lacus dignissim semper. Sed ut leo laoreet nunc vehicula imperdiet.</p>
+            </div>
+            <br>
+            <div class="displayFlexCenterRes">
+                <div>
+                    <h4>Codigo ciiu: <%=codigoCiiu%></h4>
+                    <p>Fabricación de otros productos de cerámica y porcelana </p>
+                    <br>
+                    <h4>Ubicacion:</h4>
+                    <p class="text-center">Departamento: <strong><%=departamento%></strong> Municipio: <strong><%=ciudadMunicipio%></strong></p>
+                </div>
+                <br>    
+                <div class="form-group text-left">        
+                    <p>Nombre representante legal: <strong><%=nombreRepLegal%></strong></p>
+                    <br>
+                    <p>Numero de documento: <strong><%=noIdentidad%></strong></p>
+                    <br>
+                    <p>Tipo de empresa: <strong><%=tipoEmpresa%></strong></p>
+                    <br>
+                    <p>Estado de la empresa: <strong><%=estadoEmpresa%></strong></p>
+                </div>
+            </div>
+            <br><hr><br>
+            <div class="displayFlexCenterRes">
+                <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar</button></a>
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Inicio</button></a>
+            </div>
+        </div> 
+
+        <%}%>
     </body>
 </html>

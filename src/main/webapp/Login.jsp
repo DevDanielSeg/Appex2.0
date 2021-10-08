@@ -18,6 +18,7 @@
 
         <link rel="stylesheet" href="estilos/estilo.css">
         <link rel="stylesheet" href="estilos/cajas.css">
+        <link rel="stylesheet" href="estilos/estilosMenu.css">
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -42,7 +43,7 @@
         <title>Identificacion</title>
     </head
     <body>
-<<<<<<< HEAD:src/main/webapp/Login.jsp
+
     <div class="body">
         <h1 class="titulo">Ingresa tu usuario </h1>
         <form action="dashboard.jsp" method="POST">
@@ -70,32 +71,11 @@
             </form>
         <br>
         <section class="text-center">
-            <button href="" class="botonB">Registrarse</button>
+            <a href="FormularioEmpresas.jsp"><button>Registrar Empresa</button></a>
         </section>
         <br>
         <br>
         <br>
     </div>
-
-=======
-        <h1>Login</h1>
-        <form action="dashboard.jsp" method="POST">
-            <div>
-            <label>usuario: </label>
-            <input type="text" placeholder="usuario">
-            </div>
-            <div>
-            <label>contraseña:  </label>
-            <input type="text" placeholder="usuario">    
-            </div>
-            <div>
-            <label>nit de su empresa: </label>
-            <input id="nitEmpresaPredeterminada" name="nitEmpresaPredeterminada" for="nitEmpresaPredeterminada" type="text" placeholder="usuario">
-            </div>
-            <button>ingresar</button>
-        </form>
-        
-        <a href=""><button>registrarme</button></a>
->>>>>>> parent of 72c8110 (FormularioComercial):src/main/webapp/login.jsp
     </body>
 </html>
