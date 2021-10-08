@@ -15,7 +15,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-        <%//este se modifico %>
+    <%//este se modifico %>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,6 +26,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
+        <link rel="stylesheet" href="estilos/cajas.css">
+        <link rel="stylesheet" href="estilos/estilosMenu.css">
 
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
@@ -50,8 +52,31 @@
         <title>Actualizacion Empresa</title>
     </head>
     <body>
+
+        <% 
+            String nitEmpresaPredeterminada = request.getParameter(("nitEmpresaPredeterminada"));
+        %>
+
+        <menu class="menu backgroundDeg">
+            <div class="displayFlexCenter">
+
+                <label for="botonMenu" class="botonMenu" id="marginImg">
+                    <img src="src/assets/menu.svg" alt="" class="marginImg">
+                    <img src="src/assets/cerrar.svg" alt="" class="botonCerrar">
+                </label>
+
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" class="logoMenu menuBrillo"></a>
+            </div>
+            <input type="checkbox" id="botonMenu" class="menuInputCheckbox">        
+            <div class="desplegableMenu displayFlexCenterRes">
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
+                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
+                <a href="">Productos</a>
+                <a href="Login.jsp" >Salir</a>
+            </div>
+        </menu>
         <h1>Actualizacion de Datos Empresas AppEx</h1>
-        <%String nitEmpresaPredeterminada = request.getParameter(("nitEmpresaPredeterminada"));%>
         <form action="UpdateBusiness_ctr.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" method="POST">
 
             <%
@@ -76,7 +101,7 @@
                 <input value="<%=nombreEmpresa%>" id="nombreEmpresa" name="nombreEmpresa" type="text" maxlength="50" placeholder="Nombre del negocio" required/>
             </div>
             <div class="form-group">
-                <label for="nit">NIT de empresa</label>
+                <label for="nit">NIT de empresa - <span class="colorTwo">No es posible modificar</span></label>
                 <input value="<%=nit%>" id="nit" type="text" name="nit" maxlength="20" placeholder="Numero de Nit, con digito de verificación" title="ingresa un valor, este campo solo acepta numeros y guion(-)" required/>
             </div>
             <div class="form-group">

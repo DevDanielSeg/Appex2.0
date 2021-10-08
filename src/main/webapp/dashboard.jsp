@@ -109,19 +109,20 @@
                     </div>
                 </div>
             </div> 
-            <div class="cards">
-                <h3>Opciones</h3><br>
-                <div class="displayFlexCenterRes">
-                    <a><button>Agregar Productos</button></a>
-                    <a href="FormularioEmpresas.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"> <button>Registrar Empresa</button></a>
-                    <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Datos Comerciales</button></a>
+            <div class="cajaPadre">
+                <div class="cards">
+                    <h3>Opciones</h3><br>
+                    <div class="displayFlexCenterRes">
+                        <a><button>Agregar Productos</button></a>
+                        <a href="FormularioComercial.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Datos Comerciales</button></a>
+                    </div>
                 </div>
-            </div>
-            <div class="cards">
-                <h3>Configuraciones</h3><br>
-                <div class="displayFlexCenterRes">
-                    <a><button>Editar Perfil</button></a>
-                    <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar Empresa</button></a>
+                <div class="cards">
+                    <h3>Configuraciones</h3><br>
+                    <div class="displayFlexCenterRes">
+                        <a><button>Editar Perfil</button></a>
+                        <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar Empresa</button></a>
+                    </div>
                 </div>
             </div>
         </div>

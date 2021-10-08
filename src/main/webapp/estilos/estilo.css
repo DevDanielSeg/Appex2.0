@@ -23,7 +23,9 @@ and open the template in the editor.
     --color-base: #1d1d1f;
 
 }
-
+.colorTwo{
+    color: var(--color-secundary);
+}
 body{
     font-family:  var(--font-secondary);
     color:var(--color-base);

@@ -118,7 +118,7 @@
                     <p>Estado de la empresa: <strong><%=estadoEmpresa%></strong></p>
                 </div>
             </div>
-            <br><hr><br>
+            <br><br>
             <div class="displayFlexCenterRes">
                 <a href="UpdateBusiness.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Editar</button></a>
                 <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>"><button>Inicio</button></a>
