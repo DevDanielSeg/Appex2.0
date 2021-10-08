@@ -18,7 +18,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&family=Roboto&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="estilos/estilo.css">
+        <link rel="stylesheet" href="estilos/cajas.css">
+        <link rel="stylesheet" href="estilos/estilosMenu.css">
 
+        
         <link rel="apple-touch-icon" sizes="57x57" href="src/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="src/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="src/apple-icon-72x72.png">
@@ -42,10 +45,28 @@
         <title>Formulario Comercial</title>
     </head>
     <body>
-       
+        <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
+       <menu class="menu backgroundDeg">
+            <div class="displayFlexCenter">
+
+                <label for="botonMenu" class="botonMenu" id="marginImg">
+                    <img src="src/assets/menu.svg" alt="" class="marginImg">
+                    <img src="src/assets/cerrar.svg" alt="" class="botonCerrar">
+                </label>
+
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>" class="logoMenu menuBrillo"></a>
+            </div>
+            <input type="checkbox" id="botonMenu" class="menuInputCheckbox">        
+            <div class="desplegableMenu displayFlexCenterRes">
+                <a href="dashboard.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Inicio</a>
+                <a href="MiEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Mis Datos</a>
+                <a href="ConsultaEmpresa.jsp?nitEmpresaPredeterminada=<%=nitEmpresaPredeterminada%>">Catalogo</a>
+                <a href="">Productos</a>
+                <a href="Login.jsp" >Salir</a>
+            </div>
+        </menu>
         <h1>Ingresa tu empresa al mundo AppEx</h1>
         <form action="FormularioComercial_ctr.jsp" method="post">
-            <%String nitEmpresaPredeterminada = request.getParameter("nitEmpresaPredeterminada");%>
             <div class="form-group">
                 <label for="nombreEmpresa">Nombre comercial de tu empresa</label>
                 <input id="nombreComercialEmpresa" name="nombreComercialEmpresa" type="text" maxlength="50" placeholder="Nombre comercial" required/>
